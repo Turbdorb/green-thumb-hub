@@ -11,7 +11,7 @@ import Vote from './pages/Vote';
 function App() {
   return (
     <Router>
-      <div className="flex-column justify-center align-center min-100-vh bg-primary">
+      <div className="flex-column justify-center align-center min-100-vh bg-gray-900">
         <Routes>
           <Route 
             path="/" 
