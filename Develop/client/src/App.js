@@ -17,14 +17,6 @@ function App() {
             path="/" 
             element={<Home />} 
           />
-          <Route 
-            path="/matchup" 
-            element={<Matchup />} 
-          />
-          <Route 
-            path="/matchup/:id" 
-            element={<Vote />} 
-          />
         </Routes>
       </div>
     </Router>
