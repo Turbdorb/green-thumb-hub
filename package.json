@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "react-tailwindcss-datepicker": "^1.6.6"
+  }
+}
