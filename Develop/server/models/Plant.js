@@ -25,4 +25,4 @@ const plantSchema = new Schema({
 
 const Plant = model('Plant', plantSchema);
 
-model.exports = Plant;
+module.exports = Plant;
