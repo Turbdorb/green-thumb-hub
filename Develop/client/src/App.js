@@ -5,8 +5,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 
 import Home from './pages/Home';
-import Matchup from './pages/Matchup';
-import Vote from './pages/Vote';
 
 function App() {
   return (
