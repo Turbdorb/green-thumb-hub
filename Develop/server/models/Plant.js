@@ -1,10 +1,6 @@
 const { Schema, model } = require('mongoose');
 
 const plantSchema = new Schema({
-    id: {
-        type: Number,
-        default: 1,
-    },
     common_name: {
         type: String,
         required: false,
@@ -20,6 +16,10 @@ const plantSchema = new Schema({
     sunlight: {
         type: String,
         required: true,
+    },
+    description: {
+        type: String,
+        required: false,
     },
 });
 
