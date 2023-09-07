@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User } = require('../models');
+const { User, Plant } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -49,6 +49,25 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
+    },
+    addPlant: async (parent, { common_name, scientific_name, watering, sunlight, description }, context) => {
+      if (context.user) {
+        const newPlant = await Plant.create({
+          common_name,
+          scientific_name,
+          watering,
+          sunlight,
+          description
+        })
+      
+    
+      await User.findOneAndUpdate(
+        { _id: context.user._id },
+        { $addToSet: { plants: plant._id}}
+      );
+        return newPlant;
+    }
+      throw new AuthenticationError('Incorrect credentials');
     }
   }
 };
