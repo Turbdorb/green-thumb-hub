@@ -21,6 +21,15 @@ const plantSchema = new Schema({
         type: String,
         required: false,
     },
+    wateringHistory: [
+        {
+            date: {
+                type: Date,
+                default: Date.now()
+            },
+            watered: { type: Boolean }
+        }
+    ]
 });
 
 const Plant = model('Plant', plantSchema);
