@@ -11,10 +11,8 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
-import Home from './pages/Home';
-import Signup from './pages/CreateAccount';
-import Login from './components/Login';
-import Signups from './components/Signup';
+import Home from "./pages/Home";
+import Login from "./components/Login";
 
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem("id_token");
