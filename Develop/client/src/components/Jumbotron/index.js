@@ -1,5 +1,5 @@
 import React from "react";
-// import logo from '../../images/plant.jpg';
+import logo from '../../images/plant.jpg';
 
 
 
@@ -7,7 +7,7 @@ import React from "react";
 function Jumbotron(/*{ children }*/) {
     return (
         <div className="mx-auto">
-            <img className="relative -z-10 mx-auto min-w-full" />
+            <img src={logo} className="relative -z-10 mx-auto min-w-full" alt="plant" />
         </div>
     );
 }
