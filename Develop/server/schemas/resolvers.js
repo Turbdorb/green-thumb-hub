@@ -52,30 +52,6 @@ const resolvers = {
 
       throw new AuthenticationError('Not logged in');
     },
-    updatePlant: async (parent, args) => {
-      const { _id, common_name, scientific_name, watering, sunlight } = args;
-
-      try {
-        const updatedPlant = await Plant.findByIdAndUpdate(
-          _id,
-          {
-            common_name,
-            scientific_name,
-            watering,
-            sunlight
-          },
-          { new: true }
-        );
-
-        if (!updatedPlant) {
-          throw new Error('Plant not found');
-        }
-
-        return updatedPlant;
-      } catch (error) {
-        throw new Error(`Error updating plant: ${error.message}`);
-      }
-    },
     deleteUser: async (parent, args) => {
       const { _id } = args;
 
