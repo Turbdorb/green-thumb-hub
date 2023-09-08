@@ -1,5 +1,8 @@
 import React from "react";
 import Plant from "./pages/Plant";
+import Home from "./pages/Home";
+import Signup from "./pages/CreateAccount";
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Uncomment import statement below after building queries and mutations
@@ -10,9 +13,6 @@ import {
   createHttpLink,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
-
-import Home from "./pages/Home";
-import Login from "./components/Login";
 
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem("id_token");
@@ -36,6 +36,7 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
+<<<<<<< HEAD
 
     <Router>
         <Routes>
@@ -53,6 +54,15 @@ function App() {
     </Router>
 
 
+=======
+      <Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/plant" element={<Plant />} />
+            <Route path="/signup" element={<Signup />} />
+          </Routes>
+      </Router>
+>>>>>>> 2d2fc42 (changes to login, signup)
     </ApolloProvider>
   );
 }
