@@ -1,5 +1,4 @@
 import React from "react";
-// import Login from "../components/Login";
 import Signups from "../components/Signup";
 import Nav from "../components/Nav";
 import logo from "../images/roses.jpg";
@@ -10,7 +9,6 @@ const Signup = () => {
             <Nav />
             <img src={logo} className="min-w-full" alt="plant" />
 
-            {/* <Login /> */}
             <Signups />
         </div>
     );

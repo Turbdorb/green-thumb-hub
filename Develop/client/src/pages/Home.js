@@ -11,7 +11,6 @@ const Home = () => {
       <img src={logo} className="min-w-full" alt="plant" />
       
       <Login />
-      {/* <Signup /> */}
     </div>
   );
 };
