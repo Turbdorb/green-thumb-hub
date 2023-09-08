@@ -44,19 +44,36 @@ const typeDefs = gql`
       email: String!
       password: String!
     ): Auth
+
+    addPlant(
+          common_name: String
+          scientific_name: String!
+          watering: String!
+          sunlight: String!
+          description: String
+        ): Plant
+
     updateUser(
       firstName: String
       lastName: String
       email: String
       password: String
     ): User
+
+    deleteUser(
+      _id: ID!
+    ): User
+
+    deletePlant(
+      id: ID!
+    ): Plant
+
     login(email: String!, password: String!): Auth
-    addPlant(
-      common_name: String
-      scientific_name: String!
-      watering: String!
-      sunlight: String!
-      description: String
+
+    addWateringEvent(
+      plantId: ID!
+      date: String!
+      watered: Boolean!
     ): Plant
   }
 `;
