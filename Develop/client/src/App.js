@@ -36,33 +36,23 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-<<<<<<< HEAD
 
-    <Router>
+      <Router>
         <Routes>
-          <Route 
-            path="/" 
-            element={<Home />} 
+          <Route
+            path="/"
+            element={<Home />}
           />
           <Route
             path="/signup"
             element={<Signup />}
-            />            
-           <Route path="/" element={<Home />} />
-           <Route path="/plant" element={<Plant />} />
+          />
+          <Route path="/" element={<Home />} />
+          <Route path="/plant" element={<Plant />} />
         </Routes>
-    </Router>
-
-
-=======
-      <Router>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/plant" element={<Plant />} />
-            <Route path="/signup" element={<Signup />} />
-          </Routes>
       </Router>
->>>>>>> 2d2fc42 (changes to login, signup)
+
+
     </ApolloProvider>
   );
 }
