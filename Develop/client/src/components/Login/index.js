@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-// import { useMutation } from '@apollo/client';
 import { Link } from 'react-router-dom';
-// import { LOGIN } from '../../utils/mutations';
-// import Auth from '../../utils/auth';
+import { useMutation } from '@apollo/client';
+import Auth from '../../utils/auth';
+import { LOGIN } from '../../utils/mutations';
 
 function Login(props) {
     const [formState, setFormState] = useState({ email: '', password: '' });
@@ -64,7 +64,7 @@ function Login(props) {
                     <div className="mt-6">
                         <button type="submit" className='w-full px-4 py-2 tracking-wide text-zinc-50 transition-colors duration-200 transform bg-green-700 rounded-md hover:bg-green-600 focus:outline-none focus:bg-green-600'>Submit</button>
                     </div>
-                    <p className='mt-2'>Don't have an account?<Link to="/signup" className='ml-1 underline hover:text-green-500'>Signup</Link></p>
+                    <p className='mt-2'>Don't have an account?<Link to="/signup" className='ml-1 underline text-zinc-800 hover:text-green-700'>Signup</Link></p>
                 </form>
             </div>
         </div>

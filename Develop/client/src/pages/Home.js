@@ -1,16 +1,15 @@
 import React from "react";
-import Jumbotron from "../components/Jumbotron";
 import Login from "../components/Login";
+// import Signup from "../components/Signup";
 import Nav from "../components/Nav";
+import logo from "../images/plant.jpg";
 
 const Home = () => {
   return (
     <div className="flex flex-col relative">
-      {/* <CategoryMenu />
-      <ProductList />
-      <Cart /> */}
       <Nav />
-      <Jumbotron />
+      <img src={logo} className="min-w-full" alt="plant" />
+      
       <Login />
     </div>
   );
