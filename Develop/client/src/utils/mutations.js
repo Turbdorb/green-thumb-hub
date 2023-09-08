@@ -80,3 +80,43 @@ export const ADD_PLANT = gql`
     }
   }
 `;
+
+export const UPDATE_PLANT = gql`
+  mutation updatePlant(
+    $_id: ID!
+    $common_name: String
+    $scientific_name: String
+    $watering: String
+    $sunlight: String
+  ) {
+    updatePlant(
+      _id: $_id
+      common_name: $common_name
+      scientific_name: $scientific_name
+      watering: $watering
+      sunlight: $sunlight
+    ) {
+      _id
+      common_name
+      scientific_name
+      watering
+      sunlight
+    }
+  }
+`;
+
+export const DELETE_PLANT = gql`
+  mutation deletePlant($_id: ID!) {
+    deletePlant(_id: $_id) {
+      _id
+    }
+  }
+`;
+
+export const DELETE_USER = gql`
+  mutation deleteUser($_id: ID!) {
+    deleteUser(_id: $_id) {
+      _id
+    }
+  }
+`;
