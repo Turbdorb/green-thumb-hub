@@ -21,6 +21,26 @@ const plantSchema = new Schema({
         type: String,
         required: false,
     },
+    cycle: {
+        type: String,
+        required: false
+    },
+    growth_rate: {
+        type: String,
+        required: false
+    },
+    maintenance: {
+        type: String,
+        required: false
+    },
+    hardiness: {
+        type: String,
+        required: false
+    },
+    edible_fruit: {
+        type: Boolean,
+        required: false
+    },
     wateringHistory: [
         {
             date: {
