@@ -11,8 +11,10 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
-import Home from "./pages/Home";
-import Login from "./components/Login";
+import Home from './pages/Home';
+import Signup from './pages/CreateAccount';
+import Login from './components/Login';
+import Signups from './components/Signup';
 
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem("id_token");
@@ -36,15 +38,23 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <Router>
-        <div className="flex-column justify-center align-center min-100-vh bg-gray-900">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/plant" element={<Plant />} />
-          </Routes>
-        </div>
-      </Router>
+
+    <Router>
+        <Routes>
+          <Route 
+            path="/" 
+            element={<Home />} 
+          />
+          <Route
+            path="/signup"
+            element={<Signup />}
+            />            
+           <Route path="/" element={<Home />} />
+           <Route path="/plant" element={<Plant />} />
+        </Routes>
+    </Router>
+
+
     </ApolloProvider>
   );
 }
