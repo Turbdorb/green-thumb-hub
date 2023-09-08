@@ -55,8 +55,7 @@ class Plant extends React.Component {
         ))}
       </div>
     );
+  }
 }
-}
-
 
 export default Plant;
