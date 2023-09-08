@@ -1,5 +1,5 @@
 import React from "react";
-import Plant from "./pages/Plant";
+import Search from "./components/Search";
 import Home from "./pages/Home";
 import Signup from "./pages/CreateAccount";
 
@@ -41,7 +41,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/" element={<Home />} />
-          <Route path="/plant" element={<Plant />} />
+          <Route path="/search" element={<Search />} />
         </Routes>
       </Router>
     </ApolloProvider>
