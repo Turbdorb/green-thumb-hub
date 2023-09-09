@@ -3,6 +3,7 @@ import Plant from "./pages/Plant";
 import Home from "./pages/Home";
 import Signup from "./pages/CreateAccount";
 import Calender from "./pages/Calender";
+import MyGarden from "./pages/MyGarden";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -50,6 +51,7 @@ function App() {
           />
           <Route path="/" element={<Home />} />
           <Route path="/calender" element={<Calender />} />
+          <Route path="/MyGarden" element={<MyGarden />} />
           <Route path="/plant" element={<Plant />} />
           <Route path="/search" element={<Search />} />
         </Routes>
