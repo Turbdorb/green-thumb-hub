@@ -1,39 +1,49 @@
 import React, { useState, useEffect } from 'react';
-import { useMutation } from '@apollo/client';
+import { useMutation, useQuery } from '@apollo/client';
 import { WATER_PLANT } from '../../utils/mutations';
+import { QUERY_USER } from '../../utils/queries';
 
-const WateringCheckbox = ({ plantId }) => {
-    const [isChecked, setIsChecked] = useState(false);
+function WateringButton(plantId) {
+  const currentDate = new Date().toISOString();
+  const { data } = useQuery(QUERY_USER);
+  let user;
+  if (data) { user = data.user; }
+
+    const [isWatered, setIsWatered] = useState(false);
     const [addWateringEvent] = useMutation(WATER_PLANT);
   
-    const handleCheckboxChange = async () => {
+    const handleWatering = async () => {
       try {
-        const currentDate = new Date();
-        const formattedDate = currentDate.toISOString();
+        const currentDate = new Date().toISOString();
   
         await addWateringEvent({
           variables: {
             plantId: plantId,
-            date: formattedDate,
-            watered: !isChecked
+            date: currentDate,
+            watered: true
           }
         });
   
-        setIsChecked(!isChecked);
+        setIsWatered(true);
       } catch (error) {
         console.error(error);
       }
     };
+
+    useEffect(() => {
+      try {
+        const lastWatering = user.plants[1].wateringHistory[user.plants[1].wateringHistory.length -1];
+        
+        if (lastWatering !== currentDate) { setIsWatered(true); }
+      } catch (error) {
+        console.log(error);
+      }
+    }, [plantId]);
   
     return (
-        <label>
-          Watered:
-          <input
-            type="checkbox"
-            checked={isChecked}
-            onChange={handleCheckboxChange}
-          />
-        </label>
+        <button disabled={isWatered} onClick={handleWatering}>
+          {isWatered ? 'Watered' : 'Water Me!'}
+        </button>
     );
 };
 
@@ -60,7 +70,7 @@ const PlantCard = ({ plantId }) => {
             <ul style={{ listStyleType: 'none' }}>
               <li>{plantDetails.common_name}</li>
               <li>{plantDetails.scientific_name}</li>
-              <li><WateringCheckbox plantId={plantId}/></li>
+              <li><WateringButton plantId={plantId}/></li>
             </ul>
           )}   
         </div>
