@@ -82,7 +82,7 @@ function Signup(props) {
                 </div>
                 <div className="mt-6">
                     <button type="submit"
-                    className='w-full px-4 py-2 tracking-wide text-zinc-50 transition-colors duration-200 transform bg-green-700 rounded-md hover:bg-green-600 focus:outline-none focus:bg-green-600'>Submit</button>
+                    className='w-full px-4 py-2 tracking-wide text-zinc-50 transition-colors duration-200 transform bg-green-600 rounded-md hover:bg-green-600 focus:outline-none focus:bg-green-600 shadow-sm shadow-black'>Submit</button>
                 </div>
             </form>
             </div>
