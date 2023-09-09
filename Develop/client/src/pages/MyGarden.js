@@ -1,10 +1,10 @@
 import logo from './logo.svg';
-import './App.css';
+import './MyGarden.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { NavBar } from "./components/NavBar";
 import { Banner } from "./components/Banner";
-import { Calender } from "./components/Calender";
 import { MyPlants } from "./components/MyPlants";
+import { Calender } from "./components/Calender";
 import { Footer } from "./components/Footer";
 
 function App() {
@@ -12,8 +12,8 @@ function App() {
     <div className="App">
       <NavBar />
       <Banner />
-      <Skills />
-      <Plants />
+      <MyPlants />
+      <Calender />
       <Footer />
     </div>
   );

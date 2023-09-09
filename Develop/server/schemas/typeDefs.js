@@ -8,6 +8,10 @@ const typeDefs = gql`
     watering: String!
     sunlight: String!
     description: String
+    cycle: String
+    growth_rate: String
+    maintenance: String
+    hardiness: String
     wateringHistory: [WateringEvent]!
   }
 
