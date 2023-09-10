@@ -8,8 +8,8 @@ import PlantCard from "../components/PlantCard";
 const Home = () => {
   return (
     <div className="flex flex-col relative">
-      <Nav />
       <img src={logo} className="min-w-full" alt="plant" />
+      <Nav />
 
       <Login />
       <PlantCard plantId={1} />
