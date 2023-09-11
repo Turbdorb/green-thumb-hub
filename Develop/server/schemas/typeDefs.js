@@ -74,6 +74,12 @@ const typeDefs = gql`
 
     login(email: String!, password: String!): Auth
 
+    waterPlant(
+      plantId: ID!
+      date: String!
+      watered: Boolean!
+      ): Plant
+
     addWateringEvent(
       plantId: ID!
       date: String!
