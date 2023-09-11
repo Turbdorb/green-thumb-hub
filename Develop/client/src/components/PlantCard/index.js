@@ -1,50 +1,69 @@
 import React, { useState, useEffect } from 'react';
 import { useMutation, useQuery } from '@apollo/client';
-import { WATER_PLANT } from '../../utils/mutations';
+import { WATER_PLANT, DELETE_PLANT } from '../../utils/mutations';
 import { QUERY_USER } from '../../utils/queries';
+import Search from '../Search';
 
 function WateringButton(plantId) {
   const currentDate = new Date().toISOString();
-  const { data } = useQuery(QUERY_USER);
+  
+  const [isWatered, setIsWatered] = useState(false);
+  const [addWateringEvent] = useMutation(WATER_PLANT);
+  
+  const handleWatering = async () => {
+    try {
+      const currentDate = new Date().toISOString();
+  
+      await addWateringEvent({
+        variables: {
+          plantId: plantId,
+          date: currentDate,
+          watered: true
+        }
+      });
+  
+      setIsWatered(true);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   let user;
-  if (data) { user = data.user; }
+  const { data } = useQuery(QUERY_USER);
+  
+  if (data) {
+    user = data.user;
+  }
 
-    const [isWatered, setIsWatered] = useState(false);
-    const [addWateringEvent] = useMutation(WATER_PLANT);
-  
-    const handleWatering = async () => {
-      try {
-        const currentDate = new Date().toISOString();
-  
-        await addWateringEvent({
-          variables: {
-            plantId: plantId,
-            date: currentDate,
-            watered: true
-          }
-        });
-  
-        setIsWatered(true);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    useEffect(() => {
-      try {
-        const lastWatering = user.plants[1].wateringHistory[user.plants[1].wateringHistory.length -1];
+  useEffect(() => {
+    try {
+      const lastWatering = user?.plants[1].wateringHistory[user.plants[1].wateringHistory.length -1];
         
-        if (lastWatering !== currentDate) { setIsWatered(true); }
-      } catch (error) {
-        console.log(error);
-      }
-    }, [plantId]);
+      if (lastWatering !== currentDate) { setIsWatered(true); }
+    } catch (error) {
+      console.log(error);
+    }
+  }, [plantId]);
   
-    return (
-        <button disabled={isWatered} onClick={handleWatering}>
-          {isWatered ? 'Watered' : 'Water Me!'}
-        </button>
-    );
+  return (
+      <button disabled={isWatered} onClick={handleWatering}>
+        {isWatered ? 'Watered' : 'Water Me!'}
+      </button>
+  );
+};
+
+function DeleteButton(plantId) {
+  const [deletePlant] = useMutation(DELETE_PLANT);
+
+  const handleDelete = async () => {
+    try {
+      await deletePlant({ variables: { plantId }});
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  return <button onClick={handleDelete}>Delete Plant</button>;
 };
 
 const PlantCard = ({ plantId }) => {
@@ -64,13 +83,15 @@ const PlantCard = ({ plantId }) => {
     }, [plantId]);
     
     return (
-        <div className="card">
+        <div className="card max-w-sm bg-white border border-gray-200 rounded-lg shadow">
+          
           {/* Plant Image here */}
           {plantDetails && (
             <ul style={{ listStyleType: 'none' }}>
               <li>{plantDetails.common_name}</li>
               <li>{plantDetails.scientific_name}</li>
               <li><WateringButton plantId={plantId}/></li>
+              <li><DeleteButton plantId={plantId}/></li>
             </ul>
           )}   
         </div>

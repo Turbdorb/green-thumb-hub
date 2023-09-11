@@ -67,17 +67,18 @@ const resolvers = {
         throw new Error(`Error deleting user: ${error.message}`);
       }
     },
-    deletePlant: async (parent, args) => {
-      const { _id } = args;
-
+    deletePlant: async (parent, { plantId }, { userId }) => {
       try {
-        const deletedPlant = await Plant.findByIdAndDelete(_id);
+        const user = await User.findById(userId);
 
-        if (!deletedPlant) {
-          throw new Error('Plant not found');
+        if (!user) {
+          throw new Error('User not found');
         }
 
-        return { _id: deletedPlant._id };
+        user.plants = user.plants.filter(plant => plant._id.toString() !== plantId);
+        
+        await user.save();
+        return user;
       } catch (error) {
         throw new Error(`Error deleting plant: ${error.message}`);
       }

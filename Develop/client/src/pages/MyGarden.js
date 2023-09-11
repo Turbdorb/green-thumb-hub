@@ -1,11 +1,11 @@
-import logo from './MyGarden/assets/img/logo.svg';
-import './MyGarden/assets/css/MyGarden.css';
+import logo from '../img/logo.svg';
+import '../MyGarden.css';
 //import 'bootstrap/dist/css/bootstrap.min.css';
-import { NavBar } from "./MyGarden/NavBar";
-import { Banner } from "./MyGarden/Banner";
-import { MyPlants } from "./MyGarden/MyPlants";
-import { Calender } from "./MyGarden/Calender";
-import { Footer } from "./MyGarden/Footer";
+import { NavBar } from "../components/NavBar/NavBar";
+import { Banner } from "../components/Banner/Banner";
+import { MyPlants } from "../components/MyPlants/MyPlants";
+//import { Calender } from "../components/";
+import { Footer } from "../components/footer.js/Footer";
 
 function App() {
   return (

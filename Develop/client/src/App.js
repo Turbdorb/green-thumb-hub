@@ -2,8 +2,12 @@ import React from "react";
 import Plant from "./pages/Plant";
 import Home from "./pages/Home";
 import Signup from "./pages/CreateAccount";
+<<<<<<< HEAD
 import Calender from "./pages/Calender";
 import MyGarden from "./pages/MyGarden";
+=======
+import Plant from "./pages/Plant";
+>>>>>>> 1c9d173f909bc29d4dc16a77b46fdfd7aa855be5
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -27,7 +31,7 @@ const authLink = setContext((_, { headers }) => {
 });
 
 const httpLink = createHttpLink({
-  uri: "/graphql",
+  uri: "http://localhost:3001/graphql",
 });
 
 const client = new ApolloClient({
@@ -54,6 +58,7 @@ function App() {
           <Route path="/MyGarden" element={<MyGarden />} />
           <Route path="/plant" element={<Plant />} />
           <Route path="/search" element={<Search />} />
+          <Route path="/plant" element={<Plant />} />
         </Routes>
       </Router>
       
