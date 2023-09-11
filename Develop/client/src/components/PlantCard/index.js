@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useMutation, useQuery } from '@apollo/client';
 import { WATER_PLANT, DELETE_PLANT } from '../../utils/mutations';
 import { QUERY_USER } from '../../utils/queries';
+import Search from '../Search';
 
 function WateringButton(plantId) {
   const currentDate = new Date().toISOString();
@@ -82,7 +83,8 @@ const PlantCard = ({ plantId }) => {
     }, [plantId]);
     
     return (
-        <div className="card">
+        <div className="card max-w-sm bg-white border border-gray-200 rounded-lg shadow">
+          
           {/* Plant Image here */}
           {plantDetails && (
             <ul style={{ listStyleType: 'none' }}>
