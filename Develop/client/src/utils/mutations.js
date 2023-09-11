@@ -78,5 +78,4 @@ mutation Mutation($plantId: ID!, $date: String!, $watered: Boolean!) {
     }
   }
 }
-  }
 `
