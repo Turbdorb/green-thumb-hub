@@ -1,18 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useMutation, useQuery } from '@apollo/client';
-import { WATER_PLANT } from '../../utils/mutations';
+import { WATER_PLANT, DELETE_PLANT } from '../../utils/mutations';
 import { QUERY_USER } from '../../utils/queries';
 
 function WateringButton(plantId) {
   const currentDate = new Date().toISOString();
-
-  let user;
-  const { data } = useQuery(QUERY_USER);
   
-  if (data) {
-    user = data.user;
-  }
-
   const [isWatered, setIsWatered] = useState(false);
   const [addWateringEvent] = useMutation(WATER_PLANT);
   
@@ -34,6 +27,13 @@ function WateringButton(plantId) {
     }
   };
 
+  let user;
+  const { data } = useQuery(QUERY_USER);
+  
+  if (data) {
+    user = data.user;
+  }
+
   useEffect(() => {
     try {
       const lastWatering = user?.plants[1].wateringHistory[user.plants[1].wateringHistory.length -1];
@@ -49,6 +49,20 @@ function WateringButton(plantId) {
         {isWatered ? 'Watered' : 'Water Me!'}
       </button>
   );
+};
+
+function DeleteButton(plantId) {
+  const [deletePlant] = useMutation(DELETE_PLANT);
+
+  const handleDelete = async () => {
+    try {
+      await deletePlant({ variables: { plantId }});
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  return <button onClick={handleDelete}>Delete Plant</button>;
 };
 
 const PlantCard = ({ plantId }) => {
@@ -75,6 +89,7 @@ const PlantCard = ({ plantId }) => {
               <li>{plantDetails.common_name}</li>
               <li>{plantDetails.scientific_name}</li>
               <li><WateringButton plantId={plantId}/></li>
+              <li><DeleteButton plantId={plantId}/></li>
             </ul>
           )}   
         </div>
