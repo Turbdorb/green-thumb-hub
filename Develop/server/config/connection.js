@@ -1,8 +1,10 @@
 const mongoose = require("mongoose");
+require('dotenv').config();
+
 
 mongoose.connect(
   process.env.MONGODB_URI ||
-  "mongodb://127.0.0.1:27017/greenthumbhub"
+  `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.xlfikhl.mongodb.net/greenthumbhub`
 );
 
 module.exports = mongoose.connection;
