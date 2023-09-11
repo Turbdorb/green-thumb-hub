@@ -5,46 +5,50 @@ import { QUERY_USER } from '../../utils/queries';
 
 function WateringButton(plantId) {
   const currentDate = new Date().toISOString();
-  const { data } = useQuery(QUERY_USER);
+
   let user;
-  if (data) { user = data.user; }
+  const { data } = useQuery(QUERY_USER);
+  
+  if (data) {
+    user = data.user;
+  }
 
-    const [isWatered, setIsWatered] = useState(false);
-    const [addWateringEvent] = useMutation(WATER_PLANT);
+  const [isWatered, setIsWatered] = useState(false);
+  const [addWateringEvent] = useMutation(WATER_PLANT);
   
-    const handleWatering = async () => {
-      try {
-        const currentDate = new Date().toISOString();
+  const handleWatering = async () => {
+    try {
+      const currentDate = new Date().toISOString();
   
-        await addWateringEvent({
-          variables: {
-            plantId: plantId,
-            date: currentDate,
-            watered: true
-          }
-        });
+      await addWateringEvent({
+        variables: {
+          plantId: plantId,
+          date: currentDate,
+          watered: true
+        }
+      });
   
-        setIsWatered(true);
-      } catch (error) {
-        console.error(error);
-      }
-    };
+      setIsWatered(true);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
-    useEffect(() => {
-      try {
-        const lastWatering = user.plants[1].wateringHistory[user.plants[1].wateringHistory.length -1];
+  useEffect(() => {
+    try {
+      const lastWatering = user?.plants[1].wateringHistory[user.plants[1].wateringHistory.length -1];
         
-        if (lastWatering !== currentDate) { setIsWatered(true); }
-      } catch (error) {
-        console.log(error);
-      }
-    }, [plantId]);
+      if (lastWatering !== currentDate) { setIsWatered(true); }
+    } catch (error) {
+      console.log(error);
+    }
+  }, [plantId]);
   
-    return (
-        <button disabled={isWatered} onClick={handleWatering}>
-          {isWatered ? 'Watered' : 'Water Me!'}
-        </button>
-    );
+  return (
+      <button disabled={isWatered} onClick={handleWatering}>
+        {isWatered ? 'Watered' : 'Water Me!'}
+      </button>
+  );
 };
 
 const PlantCard = ({ plantId }) => {
