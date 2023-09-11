@@ -43,18 +43,6 @@ class Plant extends React.Component {
           <h1> Pleses wait some time.... </h1>{" "}
         </div>
       );
-
-    return (
-      <div className="App">
-        <h1> Fetch data from an api in react </h1>{" "}
-        {items.map((item) => (
-          <ol key={item.id}>
-            User_Name: {item.username}, Full_Name: {item.name}, User_Email:{" "}
-            {item.email}
-          </ol>
-        ))}
-      </div>
-    );
   }
 }
 
