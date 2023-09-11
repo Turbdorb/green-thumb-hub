@@ -74,36 +74,28 @@ export const DELETE_PLANT = gql`
 `;
 
 export const LOGIN = gql`
-  mutation login($email: String!, $password: String!) {
-    login(email: $email, password: $password) {
-      token
-      user {
-        _id
-        firstName
-        lastName
-        email
-      }
+mutation login($email: String!, $password: String!) {
+  login(email: $email, password: $password) {
+    token
+    user {
+      _id
+      firstName
+      lastName
+      email
     }
   }
+}
 `;
 
 export const WATER_PLANT = gql`
-  mutation waterPlant(
-    $plantId: ID!,
-    $date: String!,
-    $watered: Boolean!
-  ) {
-    addWateringEvent(input: {
-      plantId: $plantId,
-      date: $date,
-      watered: $watered
-    }) {
-      _id
-      name
-      wateringHistory {
-        date
-        watered
+mutation Mutation($plantId: ID!, $date: String!, $watered: Boolean!) {
+  waterPlant(plantId: $plantId, date: $date, watered: $watered) {
+    wateringHistory {
+      watered
+      date {
+        value
       }
     }
   }
+}
 `

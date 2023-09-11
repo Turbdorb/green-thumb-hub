@@ -29,6 +29,11 @@ function Login(props) {
         });
     };
 
+    function showLogin() {
+        if (Auth.loggedIn()) {
+            
+        }
+    }
     return (
         <div className="flex flex-col justify-center overflow-hidden absolute m-32 lg:m-64 top-0 left-0 right-0 bottom-100">
             <div className='w-3/4 lg:w-3/4 lg:h-fit p-6 m-auto bg-zinc-50 rounded-md shadow-md'>
