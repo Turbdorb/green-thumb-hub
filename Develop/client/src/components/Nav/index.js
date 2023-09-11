@@ -24,7 +24,7 @@ function Nav() {
             return (
                 <div>
                     <Link to="/signup">
-                        <button type="button" class="text-zinc-50 bg-green-600 hover:bg-green-500 focus:outline-none focus:ring-green-500 focus:ring-1 font-medium rounded-lg text-sm px-4 py-2 text-center relative sm:bottom-1.5 mr-3 md:mr-0 shadow-sm shadow-black">Signup</button>
+                        <button type="button" class="top-0 text-zinc-50 bg-green-600 hover:bg-green-500 focus:outline-none focus:ring-green-500 focus:ring-1 font-medium rounded-lg text-sm px-4 py-2 text-center relative sm:bottom-1.5 mr-3 md:mr-0 shadow-sm shadow-black">Signup</button>
                     </Link>
                     <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-zinc-500 rounded-lg md:hidden hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-zinc-200" aria-controls="navbar-sticky" aria-expanded="false">
                         <span class="sr-only">Open main menu</span>
