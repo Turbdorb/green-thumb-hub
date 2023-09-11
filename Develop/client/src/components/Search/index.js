@@ -37,13 +37,15 @@ class Search extends React.Component {
     const { DataisLoaded, items } = this.state;
 
     return (
-      <div className="App">
+      <div className="App flex justify-center items-center bg-gray-400">
         <input
+          className="bg-zinc-100 rounded-md p-2 m-2 border border-green-700 ring-1 ring-green-500 focus:ring-1 focus:ring-green-500"
           type="text"
           value={this.state.inputID}
           onChange={this.handleInputChange}
+          placeholder="Search plants..."
         />
-        <button onClick={this.fetchData}>Submit</button>
+        <button className="bg-green-600 rounded-md p-2 m-2 shadow-sm shadow-black text-zinc-50" onClick={this.fetchData}>Search</button>
 
         {DataisLoaded &&
           items.map((item, index) => (

@@ -4,6 +4,7 @@ import Login from "../components/Login";
 import Nav from "../components/Nav";
 import logo from "../images/plant.jpg";
 import PlantCard from "../components/PlantCard";
+import Search from "../components/Search";
 
 const Home = () => {
   return (
@@ -12,7 +13,7 @@ const Home = () => {
       <Nav />
 
       <Login />
-      <PlantCard plantId={1} />
+      <Search />
     </div>
   );
 };

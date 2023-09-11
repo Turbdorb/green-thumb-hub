@@ -2,6 +2,7 @@ import React from "react";
 import Search from "./components/Search";
 import Home from "./pages/Home";
 import Signup from "./pages/CreateAccount";
+import Plant from "./pages/Plant";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -42,6 +43,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<Search />} />
+          <Route path="/plant" element={<Plant />} />
         </Routes>
       </Router>
     </ApolloProvider>

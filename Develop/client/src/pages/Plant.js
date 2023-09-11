@@ -1,4 +1,6 @@
 import React from "react";
+import Nav from '../components/Nav';
+import Search from '../components/Search'
 console.log("Plant imported");
 class Plant extends React.Component {
   // Constructor
@@ -45,14 +47,19 @@ class Plant extends React.Component {
       );
 
     return (
-      <div className="App">
-        <h1> Fetch data from an api in react </h1>{" "}
-        {items.map((item) => (
-          <ol key={item.id}>
-            User_Name: {item.username}, Full_Name: {item.name}, User_Email:{" "}
-            {item.email}
-          </ol>
-        ))}
+      <div className="bg-black h-screen">
+        <div className="flex flex-col mt-24 justify-center items-center border text-center p-4 bg-red-200 container">
+          <Nav />
+          <div>
+            <h1> Fetch data from an api in react </h1>{" "}
+            {items.map((item) => (
+              <ol className="" key={item.id}>
+                User_Name: {item.username}, Full_Name: {item.name}, User_Email:{" "}
+                {item.email}
+              </ol>
+            ))}
+          </div>
+        </div>
       </div>
     );
   }
