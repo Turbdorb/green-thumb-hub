@@ -28,7 +28,6 @@
 //   )
 // }
 
-import { MailchimpForm } from "../MailChip/MailchimpForm";
 import logo from "./logo.svg";
 import navIcon1 from "./nav-icon1.svg";
 import navIcon2 from "./nav-icon2.svg";
@@ -39,8 +38,6 @@ export const Footer = () => {
     <footer className="bg-black">
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap items-center">
-          <MailchimpForm />
-
           <div className="w-full sm:w-1/2">
             <img src={logo} alt="Logo" />
           </div>
@@ -49,7 +46,6 @@ export const Footer = () => {
               <a href="#">
                 <img src={navIcon1} alt="Icon" className="w-12 h-12" />
               </a>
-
               <a href="#">
                 <img src={navIcon2} alt="Icon" className="w-12 h-12" />
               </a>

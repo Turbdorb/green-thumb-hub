@@ -23,7 +23,7 @@ class Search extends React.Component {
 
     try {
       const response1 = await fetch(
-        `https://perenual.com/api/species-list?key=${process.env.REACT_APP_API_KEY}=${commonName}`
+        `https://perenual.com/api/species-list?key=${process.env.REACT_APP_API_KEY}&q=${commonName}`
       );
       const data1 = await response1.json();
       console.log("first API response:", data1);
