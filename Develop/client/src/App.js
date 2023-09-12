@@ -35,6 +35,7 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+// DELETE THE 2 DIVS IN FUNCTION APP
 function App() {
   return (
     <ApolloProvider client={client}>
@@ -42,10 +43,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/" element={<Home />} />
-          <Route path="/calender" element={<Calender />} />
-          <Route path="/MyGarden" element={<MyGarden />} />
-          <Route path="/plant" element={<Plant />} />
+
           <Route path="/search" element={<Search />} />
           <Route path="/plant" element={<Plant />} />
         </Routes>
