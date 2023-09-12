@@ -16,13 +16,14 @@ class Search extends React.Component {
     this.setState({ inputID: e.target.value });
   }
 
+
   async fetchData() {
     const commonName = this.state.inputID;
     console.log("Common name searched:", commonName);
 
     try {
       const response1 = await fetch(
-        `https://perenual.com/api/species-list?key=sk-1mUv64f8d062432ff2096&q=${commonName}`
+        `https://perenual.com/api/species-list?key={process.env.REACT_APP_API_KEY}=${commonName}`
       );
       const data1 = await response1.json();
       console.log("first API response:", data1);
@@ -31,7 +32,7 @@ class Search extends React.Component {
         const id = data1.data[0].id;
 
         const response2 = await fetch(
-          `https://perenual.com/api/species/details/${id}?key=sk-1mUv64f8d062432ff2096`
+          `https://perenual.com/api/species/details/${id}?key={process.env.REACT_APP_API_KEY}`
         );
         const data2 = await response2.json();
 
