@@ -23,7 +23,7 @@ class Search extends React.Component {
 
     try {
       const response1 = await fetch(
-        `https://perenual.com/api/species-list?key={process.env.REACT_APP_API_KEY}=${commonName}`
+        `https://perenual.com/api/species-list?key=${process.env.REACT_APP_API_KEY}=${commonName}`
       );
       const data1 = await response1.json();
       console.log("first API response:", data1);
@@ -32,7 +32,7 @@ class Search extends React.Component {
         const id = data1.data[0].id;
 
         const response2 = await fetch(
-          `https://perenual.com/api/species/details/${id}?key={process.env.REACT_APP_API_KEY}`
+          `https://perenual.com/api/species/details/${id}?key=${process.env.REACT_APP_API_KEY}`
         );
         const data2 = await response2.json();
 
