@@ -1,9 +1,10 @@
 import React from "react";
-import Search from "./components/Search";
+import Plant from "./pages/Plant";
 import Home from "./pages/Home";
 import Signup from "./pages/CreateAccount";
-import Plant from "./pages/Plant";
-
+import Calender from "./pages/Calender";
+import MyGarden from "./pages/MyGarden";
+import Search from "./components/Search/index";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Uncomment import statement below after building queries and mutations
@@ -42,6 +43,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<Signup />} />
+
           <Route path="/search" element={<Search />} />
           <Route path="/plant" element={<Plant />} />
         </Routes>

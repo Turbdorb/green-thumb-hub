@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 import React, { useState } from "react";
-import { generateDate, months } from "./util/calendar";
-import cn from "./util/cn";
+import { generateDate, months } from "../utils/calendar";
+import cn from "../utils/cn";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 
 export default function Calendar() {
