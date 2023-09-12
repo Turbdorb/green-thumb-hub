@@ -22,7 +22,7 @@ class Search extends React.Component {
   fetchData() {
     const { inputID } = this.state;
     fetch(
-      `https://perenual.com/api/species/details/${inputID}?key=sk-1mUv64f8d062432ff2096`
+      `https://perenual.com/api/species/details/${inputID}?key=${process.env.REACT_APP_API_KEY}`
     )
       .then((res) => res.json())
       .then((json) => {
