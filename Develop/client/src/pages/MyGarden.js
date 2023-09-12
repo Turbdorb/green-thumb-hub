@@ -9,7 +9,7 @@ import { Footer } from "../components/footer.js/Footer";
 
 function MyGarden() {
   return (
-    <div className="App">
+    <div className="MyGarden">
       <NavBar />
       <Banner />
       <MyPlants />
