@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import headerImg from "../Banner/header-img.svg";
+// import headerImg from "../Banner/header-img.svg";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
@@ -63,7 +63,7 @@ export const Banner = () => {
             <TrackVisibility>
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
-                  <img src={headerImg} alt="Header Img"/>
+                  {/* <img src={headerImg} alt="Header Img"/> */}
                 </div>}
             </TrackVisibility>
           </div>
