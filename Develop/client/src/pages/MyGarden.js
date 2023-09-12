@@ -7,7 +7,7 @@ import { MyPlants } from "../components/MyPlants/MyPlants";
 //*import { Calender } from "../pages/Calender";
 import { Footer } from "../components/footer.js/Footer";
 
-function App() {
+function MyGarden() {
   return (
     <div className="App">
       <NavBar />
@@ -18,4 +18,4 @@ function App() {
   );
 }
 
-export default App;
+export default MyGarden;

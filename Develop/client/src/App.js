@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Signup from "./pages/CreateAccount";
 import Calender from "./pages/Calender";
 import MyGarden from "./pages/MyGarden";
+import Search from "./components/Search/index";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Uncomment import statement below after building queries and mutations
