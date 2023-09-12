@@ -1,7 +1,7 @@
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { MyPlantsCard } from "./MyPlantsCard";
-//import projImg1 from "./assets/img/project-img1.png";
-//import colorSharp2 from "./assets/img/color-sharp2.png";
+import projImg1 from "../MyPlants/project-img1.png";
+import colorSharp2 from "../MyPlants/color-sharp2.png";
 import TrackVisibility from 'react-on-screen';
 
 export const MyPlants = () => {

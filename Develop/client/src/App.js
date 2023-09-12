@@ -2,13 +2,8 @@ import React from "react";
 import Plant from "./pages/Plant";
 import Home from "./pages/Home";
 import Signup from "./pages/CreateAccount";
-<<<<<<< HEAD
 import Calender from "./pages/Calender";
 import MyGarden from "./pages/MyGarden";
-=======
-import Plant from "./pages/Plant";
->>>>>>> 1c9d173f909bc29d4dc16a77b46fdfd7aa855be5
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Uncomment import statement below after building queries and mutations
