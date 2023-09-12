@@ -44,15 +44,11 @@ export const MyPlants = () => {
           <div size={12}>
             <TrackVisibility>
               {({ isVisible }) =>
-              <div class="text-center" className={isVisible ? "animate__animated animate__fadeIn": ""}>
-                <h2>My Garden</h2>
-                <p> dbfgfb </p>
+              <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
+                <h2 class="text-center">My Garden</h2>
+                <p class="text-center"> dbfgfb </p>
                 <div id="plant-tabs" defaultActiveKey="first">
                   <div variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
-                    <div class="flex justify-center item-center">
-                      <button class="border-2 rounded-md bg-purple-700" eventKey="first">Outside</button>
-                      <button class="border-2 rounded-md bg-purple-700" eventKey="second">Inside</button>
-                    </div>
                   </div>
                   <div id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
                     <div eventKey="first">
