@@ -1,7 +1,6 @@
 import React from "react";
 console.log("Plant imported");
 class Search extends React.Component {
-  // Constructor
   constructor(props) {
     super(props);
 
@@ -17,21 +16,45 @@ class Search extends React.Component {
     this.setState({ inputID: e.target.value });
   }
 
-  // ComponentDidMount is used to
-  // execute the code
-  fetchData() {
-    const { inputID } = this.state;
-    fetch(
-      `https://perenual.com/api/species/details/${inputID}?key=${process.env.REACT_APP_API_KEY}`
-    )
-      .then((res) => res.json())
-      .then((json) => {
-        console.log("API Response: ", json);
+
+  async fetchData() {
+    const commonName = this.state.inputID;
+    console.log("Common name searched:", commonName);
+
+    try {
+      const response1 = await fetch(
+        `https://perenual.com/api/species-list?key={process.env.REACT_APP_API_KEY}=${commonName}`
+      );
+      const data1 = await response1.json();
+      console.log("first API response:", data1);
+
+      if (data1.data && data1.data.length > 0) {
+        const id = data1.data[0].id;
+
+        const response2 = await fetch(
+          `https://perenual.com/api/species/details/${id}?key={process.env.REACT_APP_API_KEY}`
+        );
+        const data2 = await response2.json();
+
+        this.setState(
+          {
+            items: [data2],
+            DataisLoaded: true,
+          },
+          () => {
+            console.log("State after setting data:", this.state);
+          }
+        );
+      } else {
+        console.log("No results found");
         this.setState({
-          items: [json],
+          items: [],
           DataisLoaded: true,
         });
-      });
+      }
+    } catch (error) {
+      console.error("An error occurred:", error);
+    }
   }
   render() {
     const { DataisLoaded, items } = this.state;
@@ -45,12 +68,17 @@ class Search extends React.Component {
           onChange={this.handleInputChange}
           placeholder="Search plants..."
         />
-        <button className="bg-green-600 rounded-md p-2 m-2 shadow-sm shadow-black text-zinc-50" onClick={this.fetchData}>Search</button>
+        <button
+          className="bg-green-600 rounded-md p-2 m-2 shadow-sm shadow-black text-zinc-50"
+          onClick={this.fetchData}
+        >
+          Search
+        </button>
 
         {DataisLoaded &&
           items.map((item, index) => (
             <div key={index}>
-              <ol>Common Name: {item.common_name}</ol>
+              {/* <ol>Common Name: {item.common_name}</ol> */}
               <ol>Scientific Name: {item.scientific_name}</ol>
               <ol>Watering: {item.watering}</ol>
               <ol>Sunlight: {item.sunlight}</ol>
@@ -59,6 +87,7 @@ class Search extends React.Component {
               <ol>Maintenance: {item.maintenance}</ol>
               <ol>Hardiness: {item.hardiness.min}</ol>
               <ol>Edible Fruit: {item.edible_fruit ? "Yes" : "No"}</ol>
+              <ol>Description: {item.description}</ol>
               {item.default_image.medium_url ? (
                 <img src={item.default_image.medium_url} alt="Plant" />
               ) : (

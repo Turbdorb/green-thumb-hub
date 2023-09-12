@@ -1,6 +1,6 @@
 import React from "react";
-import Nav from '../components/Nav';
-import Search from '../components/Search'
+import Nav from "../components/Nav";
+import Search from "../components/Search";
 console.log("Plant imported");
 class Plant extends React.Component {
   // Constructor
@@ -50,6 +50,7 @@ class Plant extends React.Component {
       <div className="bg-black h-screen">
         <div className="flex flex-col mt-24 justify-center items-center border text-center p-4 bg-red-200 container">
           <Nav />
+          <Search />
           <div>
             <h1> Fetch data from an api in react </h1>{" "}
             {items.map((item) => (
@@ -64,5 +65,17 @@ class Plant extends React.Component {
     );
   }
 }
+
+// function Plant() {
+//   return (
+//     <ApolloProvider client={client}>
+//       <Router>
+//         <Routes>
+//           <Route path="/search" element={<Search />} />
+//         </Routes>
+//       </Router>
+//     </ApolloProvider>
+//   );
+// }
 
 export default Plant;
