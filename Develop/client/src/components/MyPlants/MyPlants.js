@@ -33,12 +33,14 @@ export const MyPlants = () => {
                   <div id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
                     <div eventKey="first">
                     
+                        </div>
                       <div className="grid grid-rows-2 grid-flow-col gap-4">
                         {
                           plants?.map((plants, index) => {
                             console.log(plants);
                             return (
                               <MyPlantsCard
+                                className='z-50'
                                 key={index}
                                 {...plants}
                                 />
@@ -46,7 +48,6 @@ export const MyPlants = () => {
                           })
                         }
                       </div>
-                    </div>
                     </div>
                 </div>
               </div>}
