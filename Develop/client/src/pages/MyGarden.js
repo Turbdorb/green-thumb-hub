@@ -1,7 +1,6 @@
 import Nav from "../components/Nav";
 import { Banner } from "../components/Banner/Banner";
 import { MyPlants } from "../components/MyPlants/MyPlants";
-//*import { Calender } from "../pages/Calender";
 import { Footer } from "../components/Footer/Footer";
 
 function MyGarden() {

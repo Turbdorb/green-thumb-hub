@@ -36,6 +36,7 @@
     transform: rotate(360deg);
   }
 }
+
 /************ Default Css ************/
 body {
   font-weight: 400;
@@ -288,4 +289,3 @@ a:hover {
   letter-spacing: 0.5px;
   margin-top: 20px;
 }
-
