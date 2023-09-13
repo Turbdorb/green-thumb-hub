@@ -38,22 +38,27 @@ export const MyPlants = () => {
   ];
 
   return (
-    <section className="plants" id="plants">
+    <section className="plant" id="plant">
       <div>
         <div>
           <div size={12}>
             <TrackVisibility>
               {({ isVisible }) =>
-              <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
-                <h2 class="text-center">My Garden</h2>
-                <p class="text-center"> dbfgfb </p>
+              <div class="text-center" className={isVisible ? "animate__animated animate__fadeIn": ""}>
+                <h2>My Garden</h2>
                 <div id="plant-tabs" defaultActiveKey="first">
-                  <div variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
+                <div variant="pills" className="div-pills mb-5 justify-content-center align-items-center" id="pills-tab">
+                <div class="item">
+                <a href="#" class="block p-2 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none">Outside</a>
+                </div>
+                <div class="item">
+                <a href="#" class="block p-2 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none">Inside</a>
+                  </div>
                   </div>
                   <div id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
                     <div eventKey="first">
                     
-                      <div class="grid grid-rows-2 grid-flow-col gap-4">
+                      <div className="grid grid-rows-2 grid-flow-col gap-4">
                         {
                           myplants.map((myplants, index) => {
                             return (
@@ -65,12 +70,6 @@ export const MyPlants = () => {
                           })
                         }
                       </div>
-                    </div>
-                    <div eventKey="section">
-                      <p>shb j sjd</p>
-                    </div>
-                    <div eventKey="third">
-                      <p> inventore de.</p>
                     </div>
                     </div>
                 </div>
