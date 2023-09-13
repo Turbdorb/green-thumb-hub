@@ -26,14 +26,13 @@ const resolvers = {
 
       return { token, user };
     },
-    addPlant: async (parent, { common_name, scientific_name, watering, sunlight, description }, context) => {
+    addPlant: async (parent, { common_name, scientific_name, watering, sunlight }, context) => {
       if (context.user) {
         const newPlant = await Plant.create({
           common_name,
           scientific_name,
           watering,
-          sunlight,
-          description
+          sunlight
         })
       
     
@@ -130,7 +129,7 @@ const resolvers = {
           throw new Error('User not found');
         }
 
-        user.plants = user.plants.push(plant);
+        user.plants.push(plant);
         
         await user.save();
         return user;

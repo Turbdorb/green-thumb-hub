@@ -54,7 +54,6 @@ const typeDefs = gql`
           scientific_name: String!
           watering: String!
           sunlight: String!
-          description: String
         ): Plant
 
     updateUser(
