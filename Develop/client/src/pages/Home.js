@@ -5,7 +5,7 @@ import Login from "../components/Login";
 
 const Home = () => {
   return (
-    <div style={{ backgroundImage: `url(${logo})`, backgroundSize: 'cover', width: '100vw', height: '100vh' }}>
+    <div style={{ backgroundImage: `url(${logo})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', height: '100vh' }}>
       <div className="p-24 container">
         <Header
           heading="Welcome to GreenThumb Hub!"

@@ -33,8 +33,7 @@ function Signup(props) {
     return (
         <div className="">
             <div className="bg-zinc-100 px-24 py-8 xl:py-16 rounded-tr-3xl rounded-bl-3xl rounded-tl-sm rounded-br-sm bg-opacity-80 border-2 border-green-500 shadow-xl shadow-black">
-                <h2 className='text-3xl font-semibold text-center text-zinc-800'>Signup</h2>
-            <form onSubmit={handleFormSubmit} className='mt-6'>
+            <form onSubmit={handleFormSubmit} className='font-body m-4 p-2'>
                 <div className="mb-2">
                     <label htmlFor="firstName" className='block text-sm font-semibold text-zinc-800'>First Name:</label>
                     <input
@@ -43,7 +42,7 @@ function Signup(props) {
                         type="firstName"
                         id="firstName"
                         onChange={handleChange}
-                        className='block w-full px-4 py-2 mt-2 text-black bg-white border rounded-md focus:border-green-400 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40'
+                        className='block w-full px-4 py-2 mt-2 text-black bg-white border rounded-md focus:border-green-400 focus:ring-green-600 focus:outline-none focus:ring focus:ring-opacity-40'
                     />
                 </div>
                 <div className="mb-2">
@@ -54,7 +53,7 @@ function Signup(props) {
                         type="lastName"
                         id="lastName"
                         onChange={handleChange}
-                        className='block w-full px-4 py-2 text-black bg-white border rounded-md focus:border-green-400 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40'
+                        className='block w-full px-4 py-2 text-black bg-white border rounded-md focus:border-green-400 focus:ring-green-600 focus:outline-none focus:ring focus:ring-opacity-40'
                     />
                 </div>
                 <div className="mb-2">
@@ -65,7 +64,7 @@ function Signup(props) {
                         type="email"
                         id="email"
                         onChange={handleChange}
-                        className='block w-full px-4 py-2 text-black bg-white border rounded-md focus:border-green-400 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40'
+                        className='block w-full px-4 py-2 text-black bg-white border rounded-md focus:border-green-400 focus:ring-green-600 focus:outline-none focus:ring focus:ring-opacity-40'
                     />
                 </div>
                 <div className="flex-row space-between my-2">
@@ -76,7 +75,7 @@ function Signup(props) {
                         type="password"
                         id="pwd"
                         onChange={handleChange}
-                        className='block w-full px-4 py-2 text-black bg-white border rounded-md focus:border-green-400 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40'
+                        className='block w-full px-4 py-2 text-black bg-white border rounded-md focus:border-green-400 focus:ring-green-600 focus:outline-none focus:ring focus:ring-opacity-40'
                     />
                 </div>
                 <div className="mt-6">

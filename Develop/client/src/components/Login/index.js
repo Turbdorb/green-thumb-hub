@@ -38,12 +38,11 @@ function Login(props) {
             return (
                 <div className="">
                     <div className='bg-zinc-100 px-24 py-8 xl:py-16 rounded-tr-3xl rounded-bl-3xl rounded-tl-sm rounded-br-sm bg-opacity-80 border-2 border-green-500 shadow-xl shadow-black'>
-                        <h2 className='text-3xl font-semibold text-center text-zinc-800'>Login</h2>
-                        <form onSubmit={handleFormSubmit} className='mt-6'>
-                            <div className="mb-2">
+                        <form onSubmit={handleFormSubmit} className='font-body mx-auto p-2'>
+                            <div className="">
                                 <label htmlFor="email" className='block text-sm font-semibold text-zinc-800'>Email address:</label>
                                 <input
-                                    className='block w-full px-4 py-2 mt-2 text-black bg-white border rounded-md focus:border-green-400 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40'
+                                    className='block w-full px-4 py-2 mt-2 text-black bg-white border rounded-md focus:border-green-400 focus:ring-green-600 focus:outline-none focus:ring focus:ring-opacity-40'
                                     placeholder="youremail@test.com"
                                     name="email"
                                     type="email"
@@ -54,7 +53,7 @@ function Login(props) {
                             <div className="mb-2">
                                 <label htmlFor="pwd" className='block text-sm font-semibold text-zinc-800'>Password:</label>
                                 <input
-                                    className='block w-full px-4 py-2 mt-2 text-black bg-white border rounded-md focus:border-green-400 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40'
+                                    className='block w-full px-4 py-2 mt-2 text-black bg-white border rounded-md focus:border-green-400 focus:ring-green-600 focus:outline-none focus:ring focus:ring-opacity-40'
                                     placeholder="******"
                                     name="password"
                                     type="password"
