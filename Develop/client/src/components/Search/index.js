@@ -71,6 +71,8 @@ const Search = () => {
     }
   };
 
+const jsxcss = "bg-transparent rounded-tl-none rounded-tr-3xl rounded-bl-3xl rounded-br-sm border-t-0 border-b-0 border-2 border-green-500 shadow-xl shadow-black p-4 hover:bg-zinc-100";
+
   return (
     <div className="font-body flex flex-row justify-center items-center w-full  shadow-black">
       <input
@@ -86,30 +88,31 @@ const Search = () => {
       >
         Search
       </button>
+
+      {dataIsLoaded &&
+        items.map((item, index) => (
+          <div key={index} className="m-4 p-4 bg-zinc-50/75 text-center">
+            <ol className={jsxcss}>{item.common_name}</ol>
+            {item.default_image?.medium_url 
+              ? (<img src={item.default_image.medium_url} alt="Plant" className="mx-auto my-4 rounded-t-full rounded-b-full shadow-black shadow-xl h-96 w-96" />
+            ) 
+            : ("Image not available")
+            }
+            <ol className={jsxcss}>Scientific Name: {item.scientific_name}</ol>
+            <ol className={jsxcss}>Watering: {item.watering}</ol>
+            <ol className={jsxcss}>Sunlight: {item.sunlight}</ol>
+            <ol className={jsxcss}>Cycle: {item.cycle}</ol>
+            <ol className={jsxcss}>Growth Rate: {item.growth_rate}</ol>
+            <ol className={jsxcss}>Maintenance: {item.maintenance}</ol>
+            <ol className={jsxcss}>Hardiness: {item.hardiness.min}</ol>
+            <ol className={jsxcss}>Edible Fruit: {item.edible_fruit ? "Yes" : "No"}</ol>
+            <ol className={jsxcss}>Description: {item.description}</ol>
       <button
         className="bg-blue-600 rounded-md p-2 m-2 shadow-sm shadow-black text-zinc-50"
         onClick={addPlant}
       >
         Add Plant
       </button>
-      {dataIsLoaded &&
-        items.map((item, index) => (
-          <div key={index} className="m-4 p-4 bg-zinc-50/75 text-center">
-            <ol>{item.common_name}</ol>
-            <ol>Scientific Name: {item.scientific_name}</ol>
-            <ol>Watering: {item.watering}</ol>
-            <ol>Sunlight: {item.sunlight}</ol>
-            <ol>Cycle: {item.cycle}</ol>
-            <ol>Growth Rate: {item.growth_rate}</ol>
-            <ol>Maintenance: {item.maintenance}</ol>
-            <ol>Hardiness: {item.hardiness.min}</ol>
-            <ol>Edible Fruit: {item.edible_fruit ? "Yes" : "No"}</ol>
-            <ol>Description: {item.description}</ol>
-            {item.default_image?.medium_url 
-              ? (<img src={item.default_image.medium_url} alt="Plant" />
-            ) 
-            : ("Image not available")
-            }
           </div>
         ))}
 

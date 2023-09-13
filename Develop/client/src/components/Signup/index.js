@@ -33,7 +33,7 @@ function Signup(props) {
     return (
         <div className="">
             <div className="bg-zinc-100 px-24 py-8 xl:py-16 rounded-tr-3xl rounded-bl-3xl rounded-tl-sm rounded-br-sm bg-opacity-80 border-2 border-green-500 shadow-xl shadow-black">
-            <form onSubmit={handleFormSubmit} className='font-body m-4 p-2'>
+            <form onSubmit={handleFormSubmit} className='font-body mx-auto '>
                 <div className="mb-2">
                     <label htmlFor="firstName" className='block text-sm font-semibold text-zinc-800'>First Name:</label>
                     <input
