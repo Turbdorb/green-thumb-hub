@@ -37,25 +37,7 @@
   }
 }
 
-/************ Default Css ************/
-body {
-  font-weight: 400;
-  overflow-x: hidden;
-  position: relative;
-  background-color: #121212 !important;
-  color: #fff !important;
-  font-family: 'Centra', sans-serif !important;
-}
 
-a:hover {
-  text-decoration: none;
-}
-@media (min-width:1700px) {
-	main .container {
-		max-width: 100%;
-		padding: 0 150px;
-	}
-}
 /************ Banner Css ************/
 .banner {
   margin-top: 0;
@@ -236,17 +218,17 @@ a:hover {
 .proj-imgbx:hover::before {
   height: 100%;
 }
-.proj-txtx {
-  position: absolute;
-  text-align: center;
-  top: 65%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transition: 0.5s ease-in-out;
-  opacity: 0;
-  width: 100%;
-}
-.proj-imgbx:hover .proj-txtx {
+/* .proj-txtx { */
+  /* position: absolute; */
+  /* text-align: center; */
+  /* top: 65%;
+  left: 50%; */
+  /* transform: translate(-50%, -50%); */
+  /* transition: 0.5s ease-in-out; */
+  /* opacity: 0; */
+  /* width: 100%; */
+/* } */
+/* .proj-imgbx:hover .proj-txtx {
   top: 50%;
   opacity: 1;
 }
@@ -255,13 +237,13 @@ a:hover {
   font-weight: 700;
   letter-spacing: 0.8px;
   line-height: 1.1em;
-}
-.proj-txtx span {
+} */
+/* .proj-txtx span {
   font-style: italic;
   font-weight: 400;
   font-size: 15px;
   letter-spacing: 0.8px;
-}
+} */
 .background-image-right {
   top: 20%;
   position: absolute;
