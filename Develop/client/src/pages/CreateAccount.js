@@ -1,15 +1,20 @@
 import React from "react";
-import Signups from "../components/Signup";
-import Nav from "../components/Nav";
 import logo from "../images/roses.jpg";
+import Header from "../components/Header";
+import Signups from "../components/Signup";
 
 const Signup = () => {
     return (
-        <div className="flex flex-col relative">
-            <Nav />
-            <img src={logo} className="min-w-full" alt="plant" />
-
-            <Signups />
+        <div style={{ backgroundImage: `url(${logo})`, backgroundSize: 'cover', width: '100vw', height: '100vh' }}>
+            <div className="p-14 container">
+                <Header
+                    heading="Welcome to GreenThumb Hub!"
+                    paragraph="Already have an account?"
+                    linkName="Login"
+                    linkUrl="/"
+                />
+                <Signups />
+            </div>
         </div>
     );
 };

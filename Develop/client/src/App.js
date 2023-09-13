@@ -2,7 +2,6 @@ import React from "react";
 import Plant from "./pages/Plant";
 import Home from "./pages/Home";
 import Signup from "./pages/CreateAccount";
-import Calender from "./pages/Calender";
 import MyGarden from "./pages/MyGarden";
 import Search from "./components/Search/index";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
@@ -35,25 +34,15 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+// DELETE THE 2 DIVS IN FUNCTION APP
 function App() {
   return (
     <ApolloProvider client={client}>
-
-      <Router> 
-        <div>
-      <Routes>
-          <Route
-            path="/"
-            element={<Home />}
-          />
-          <Route
-            path="/signup"
-            element={<Signup />}
-          />
+      <Router>
+        <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/calender" element={<Calender />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="/MyGarden" element={<MyGarden />} />
-          <Route path="/plant" element={<Plant />} />
           <Route path="/search" element={<Search />} />
           <Route path="/plant" element={<Plant />} />
         </Routes>

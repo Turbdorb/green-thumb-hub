@@ -1,16 +1,18 @@
-import logo from '../images/logo.svg';
-import '../MyGarden.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { NavBar } from "../components/NavBar/NavBar";
+import Nav from "../components/Nav";
 import { Banner } from "../components/Banner/Banner";
 import { MyPlants } from "../components/MyPlants/MyPlants";
 //*import { Calender } from "../pages/Calender";
-import { Footer } from "../components/footer.js/Footer";
+import { Footer } from "../components/Footer/Footer";
 
 function MyGarden() {
   return (
+<<<<<<< HEAD
     <div className="MyGarden">
       <NavBar />
+=======
+    <div className="App">
+      <Nav />
+>>>>>>> 51471f05f29ba0161454b4b565294365f258952b
       <Banner />
       <MyPlants />
       <Footer />
