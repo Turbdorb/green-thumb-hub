@@ -41,6 +41,10 @@ const plantSchema = new Schema({
         type: Boolean,
         required: false
     },
+    imgURL: {
+        type: String,
+        required: false
+    },
     wateringHistory: [
         {
             date: {

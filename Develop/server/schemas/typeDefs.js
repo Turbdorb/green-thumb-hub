@@ -13,6 +13,7 @@ const typeDefs = gql`
     maintenance: String
     hardiness: String
     wateringHistory: [WateringEvent]!
+    imgURL: String
   }
 
   type WateringEvent {
@@ -95,6 +96,7 @@ const typeDefs = gql`
     watering: String!
     sunlight: String!
     description: String
+    imgURL: String
   }
 `;
 

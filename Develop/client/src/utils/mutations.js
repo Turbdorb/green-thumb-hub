@@ -106,6 +106,7 @@ mutation Mutation($plant: PlantInput!) {
     _id
     plants {
       _id
+      imgURL
       common_name
       cycle
       description
@@ -121,6 +122,7 @@ mutation Mutation($plant: PlantInput!) {
         }
         watered
       }
+      
     }
   }
 }

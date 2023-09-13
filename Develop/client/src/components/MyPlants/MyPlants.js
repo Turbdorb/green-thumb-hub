@@ -36,6 +36,7 @@ export const MyPlants = () => {
                       <div className="grid grid-rows-2 grid-flow-col gap-4">
                         {
                           plants?.map((plants, index) => {
+                            console.log(plants);
                             return (
                               <MyPlantsCard
                                 key={index}

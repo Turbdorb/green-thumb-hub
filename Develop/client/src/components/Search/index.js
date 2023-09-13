@@ -45,7 +45,9 @@ const Search = () => {
   };
 
   const addPlant = async () => {
-    const { common_name, scientific_name, watering, sunlight, cycle, description, growth_rate, hardiness, maintenance, _id } = items[0];
+    const { common_name, scientific_name, watering, sunlight, description, _id, default_image } = items[0];
+    const { medium_url } = default_image;
+    console.log(medium_url);
 
     try {
       const { data } = await addPlantToGarden({
@@ -55,12 +57,9 @@ const Search = () => {
           scientific_name: scientific_name[0],
           watering: watering,
           sunlight: sunlight[0],
-          // cycle: cycle,
           description: description,
-          // growth_rate: growth_rate,
-          // hardiness: hardiness,
-          // maintenance: maintenance,
-          // _id: _id
+          _id: _id,
+          imgURL: medium_url
         }},
       });
 
