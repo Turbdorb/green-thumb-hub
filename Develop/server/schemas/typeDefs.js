@@ -54,7 +54,6 @@ const typeDefs = gql`
           scientific_name: String!
           watering: String!
           sunlight: String!
-          description: String
         ): Plant
 
     updateUser(
@@ -90,7 +89,7 @@ const typeDefs = gql`
   }
 
   input PlantInput {
-    _id: ID!
+    _id: ID
     common_name: String
     scientific_name: String!
     watering: String!

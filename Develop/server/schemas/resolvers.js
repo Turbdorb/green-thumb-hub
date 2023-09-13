@@ -7,11 +7,9 @@ const resolvers = {
     user: async (parent, args, context) => {
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
-          path: 'Plant',
+          path: 'plants',
           populate: 'plants'
         });
-
-        user.orders.sort((a, b) => b.purchaseDate - a.purchaseDate);
 
         return user;
       }
@@ -26,14 +24,13 @@ const resolvers = {
 
       return { token, user };
     },
-    addPlant: async (parent, { common_name, scientific_name, watering, sunlight, description }, context) => {
+    addPlant: async (parent, { common_name, scientific_name, watering, sunlight }, context) => {
       if (context.user) {
         const newPlant = await Plant.create({
           common_name,
           scientific_name,
           watering,
-          sunlight,
-          description
+          sunlight
         })
       
     
@@ -122,18 +119,18 @@ const resolvers = {
         throw new Error(`Error adding water: ${error.message}`);
       }
     },
-    addPlantToGarden: async (parent, {plant}, {userId}) => {
+    addPlantToGarden: async (parent, {plant}, {user}) => {
       try {
-        const user = await User.findById(userId);
+        const newPlant = await User.findByIdAndUpdate(user._id, { $addToSet: {plants: plant} });
 
-        if (!user) {
+        if (!newPlant) {
           throw new Error('User not found');
         }
 
-        user.plants = user.plants.push(plant);
+        // user.plants.push(plant);
         
-        await user.save();
-        return user;
+        // await user.save();
+        return newPlant;
       } catch (error) {
         throw new Error(`Error adding plant to garden: ${error.message}`);
       }
