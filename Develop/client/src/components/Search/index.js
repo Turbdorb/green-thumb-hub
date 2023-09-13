@@ -56,11 +56,14 @@ class Search extends React.Component {
       console.error("An error occurred:", error);
     }
   }
+
   render() {
+    const jsxcss = "bg-transparent rounded-tl-none rounded-tr-3xl rounded-bl-3xl rounded-br-sm border-t-0 border-b-0 border-2 border-green-500 shadow-xl shadow-black p-4 hover:bg-zinc-100";
+    
     const { DataisLoaded, items } = this.state;
 
     return (
-      <div className="font-body flex flex-row justify-center items-center w-full  shadow-black">
+      <div className="font-body flex flex-row justify-center items-center w-full shadow-black">
         <input
           className="rounded-md p-2 m-2 border border-green-700 ring-1 ring-green-500 focus:ring-1 focus:ring-green-500"
           type="text"
@@ -77,21 +80,21 @@ class Search extends React.Component {
 
         {DataisLoaded &&
           items.map((item, index) => (
-            <div key={index} className="m-4 p-4 bg-zinc-50/75 text-center">
-              {/* <ol>Common Name: {item.common_name}</ol> */}
-              <ol>Scientific Name: {item.scientific_name}</ol>
-              <ol>Watering: {item.watering}</ol>
-              <ol>Sunlight: {item.sunlight}</ol>
-              <ol>Cycle: {item.cycle}</ol>
-              <ol>Growth Rate: {item.growth_rate}</ol>
-              <ol>Maintenance: {item.maintenance}</ol>
-              <ol>Hardiness: {item.hardiness.min}</ol>
-              <ol>Edible Fruit: {item.edible_fruit ? "Yes" : "No"}</ol>
-              <ol>Description: {item.description}</ol>
-              {item.default_image?.medium_url 
-                ? (<img src={item.default_image.medium_url} alt="Plant" />) 
+            <div key={index} className="m-4 p-2 bg-zinc-50/75 text-center  rounded-tl-sm rounded-tr-3xl rounded-bl-3xl rounded-br-sm border-2 border-green-500 shadow-xl shadow-black 2xl:mx-64">
+              <ol className={jsxcss}>Common Name: {item.common_name}</ol>
+              {item.default_image?.medium_url
+                ? (<img src={item.default_image.medium_url} alt="Plant" className="mx-auto my-4 rounded-t-full rounded-b-full shadow-black shadow-xl h-96 w-96"/>)
                 : ("Image not available")
               }
+              <ol className={jsxcss}>Scientific Name: {item.scientific_name}</ol>
+              <ol className={jsxcss}>Watering: {item.watering}</ol>
+              <ol className={jsxcss}>Sunlight: {item.sunlight}</ol>
+              <ol className={jsxcss}>Cycle: {item.cycle}</ol>
+              <ol className={jsxcss}>Growth Rate: {item.growth_rate}</ol>
+              <ol className={jsxcss}>Maintenance: {item.maintenance}</ol>
+              <ol className={jsxcss}>Hardiness: {item.hardiness.min}</ol>
+              <ol className={jsxcss}>Edible Fruit: {item.edible_fruit ? "Yes" : "No"}</ol>
+              <ol className={jsxcss}>Description: {item.description}</ol>
             </div>
           ))}
       </div>

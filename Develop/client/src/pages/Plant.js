@@ -3,12 +3,15 @@ import Nav from "../components/Nav";
 import Search from "../components/Search";
 import Headers from "../components/Header";
 import logo from "../images/plant.jpg";
+import Auth from "../utils/auth";
+import { Navigate } from "react-router-dom";
 console.log("Plant imported");
 
 
 
 
 function Plant() {
+  if (Auth.loggedIn()){
   return (
     <div className="bg-gray-900 min-h-screen" style={{ backgroundImage: `url(${logo})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', height: '100%'}}>
       <Nav />
@@ -18,6 +21,9 @@ function Plant() {
       <Search />
     </div>
   );
+} else {
+  return ( <Navigate to="/" />
+)}
 }
 
 export default Plant;
