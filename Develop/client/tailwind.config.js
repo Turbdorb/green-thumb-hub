@@ -6,7 +6,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'header': 'Rouge Script, cursive'
+        'head': 'Poppins, sans-serif',
+        'body': 'Poppins, sans-serif',
       }
     },
   },

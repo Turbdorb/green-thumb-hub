@@ -60,9 +60,9 @@ class Search extends React.Component {
     const { DataisLoaded, items } = this.state;
 
     return (
-      <div className="App flex justify-center items-center bg-gray-400">
+      <div className="font-body flex flex-row justify-center items-center w-full  shadow-black">
         <input
-          className="bg-zinc-100 rounded-md p-2 m-2 border border-green-700 ring-1 ring-green-500 focus:ring-1 focus:ring-green-500"
+          className="rounded-md p-2 m-2 border border-green-700 ring-1 ring-green-500 focus:ring-1 focus:ring-green-500"
           type="text"
           value={this.state.inputID}
           onChange={this.handleInputChange}
@@ -77,7 +77,7 @@ class Search extends React.Component {
 
         {DataisLoaded &&
           items.map((item, index) => (
-            <div key={index}>
+            <div key={index} className="m-4 p-4 bg-zinc-50/75 text-center">
               {/* <ol>Common Name: {item.common_name}</ol> */}
               <ol>Scientific Name: {item.scientific_name}</ol>
               <ol>Watering: {item.watering}</ol>
@@ -87,9 +87,9 @@ class Search extends React.Component {
               <ol>Maintenance: {item.maintenance}</ol>
               <ol>Hardiness: {item.hardiness.min}</ol>
               <ol>Edible Fruit: {item.edible_fruit ? "Yes" : "No"}</ol>
-              <ol>Description: {item.description}</ol>
+              <ol className=" indent-8">Description: {item.description}</ol>
               {item.default_image.medium_url ? (
-                <img src={item.default_image.medium_url} alt="Plant" />
+                <img src={item.default_image.medium_url} alt="Plant" className="mx-auto"/>
               ) : (
                 "Image not available"
               )}
