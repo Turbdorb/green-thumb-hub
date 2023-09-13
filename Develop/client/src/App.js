@@ -46,7 +46,6 @@ function App() {
           <Route path="/search" element={<Search />} />
           <Route path="/plant" element={<Plant />} />
         </Routes>
-        </div>
       </Router>
     </ApolloProvider>
   );
