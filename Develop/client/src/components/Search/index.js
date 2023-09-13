@@ -86,7 +86,12 @@ const Search = () => {
       >
         Search
       </button>
-
+      <button
+        className="bg-blue-600 rounded-md p-2 m-2 shadow-sm shadow-black text-zinc-50"
+        onClick={addPlant}
+      >
+        Add Plant
+      </button>
       {dataIsLoaded &&
         items.map((item, index) => (
           <div key={index} className="m-4 p-4 bg-zinc-50/75 text-center">
@@ -107,12 +112,7 @@ const Search = () => {
             }
           </div>
         ))}
-      <button
-        className="bg-blue-600 rounded-md p-2 m-2 shadow-sm shadow-black text-zinc-50"
-        onClick={addPlant}
-      >
-        Add Plant
-      </button>
+
     </div>
   );
 };
