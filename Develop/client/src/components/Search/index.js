@@ -7,7 +7,7 @@ const Search = () => {
   const [dataIsLoaded, setDataIsLoaded] = useState(false);
   const [inputID, setInputID] = useState("");
 
-  const [addPlantMutation] = useMutation(ADD_PLANT_TO_GARDEN);
+  const [addPlantToGarden] = useMutation(ADD_PLANT_TO_GARDEN);
 
   const handleInputChange = (e) => {
     setInputID(e.target.value);
@@ -48,19 +48,20 @@ const Search = () => {
     const { common_name, scientific_name, watering, sunlight, cycle, description, growth_rate, hardiness, maintenance, _id } = items[0];
 
     try {
-      const { data } = await addPlantMutation({
+      const { data } = await addPlantToGarden({
         variables: {
-          common_name,
-          scientific_name,
-          watering,
-          sunlight,
-          cycle,
-          description,
-          growth_rate,
-          hardiness,
-          maintenance,
-          _id
-        },
+          plant: {
+          common_name: common_name,
+          scientific_name: scientific_name[0],
+          watering: watering,
+          sunlight: sunlight[0],
+          // cycle: cycle,
+          description: description,
+          // growth_rate: growth_rate,
+          // hardiness: hardiness,
+          // maintenance: maintenance,
+          // _id: _id
+        }},
       });
 
       // Handle the response data if needed

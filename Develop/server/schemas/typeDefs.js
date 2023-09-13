@@ -89,7 +89,7 @@ const typeDefs = gql`
   }
 
   input PlantInput {
-    _id: ID!
+    _id: ID
     common_name: String
     scientific_name: String!
     watering: String!
