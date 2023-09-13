@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import Auth from '../../utils/auth';
 import { ADD_USER } from '../../utils/mutations';
@@ -31,9 +31,8 @@ function Signup(props) {
     };
 
     return (
-        <div className="flex flex-col justify-center overflow-hidden absolute m-32 lg:m-64 top-0 left-0 right-0 bottom-100">
-            <div className="w-3/4 lg:w-3/4 lg:h-fit p-6 m-auto bg-zinc-50 rounded-md shadow-md">
-                <h6><Link to="/" className='underline text-zinc-800 hover:text-green-700'>← Back to Login</Link></h6>
+        <div className="">
+            <div className="bg-zinc-100 px-24 py-8 xl:py-16 rounded-tr-3xl rounded-bl-3xl rounded-tl-sm rounded-br-sm bg-opacity-80 border-2 border-green-500 shadow-xl shadow-black">
                 <h2 className='text-3xl font-semibold text-center text-zinc-800'>Signup</h2>
             <form onSubmit={handleFormSubmit} className='mt-6'>
                 <div className="mb-2">
