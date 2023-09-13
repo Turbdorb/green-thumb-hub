@@ -126,10 +126,7 @@ const resolvers = {
         if (!newPlant) {
           throw new Error('User not found');
         }
-
-        // user.plants.push(plant);
         
-        // await user.save();
         return newPlant;
       } catch (error) {
         throw new Error(`Error adding plant to garden: ${error.message}`);

@@ -45,12 +45,24 @@ const Search = () => {
   };
 
   const addPlant = async () => {
-    const { common_name, scientific_name, watering, sunlight, cycle, description, growth_rate, hardiness, maintenance, _id } = items[0];
+    const { common_name, scientific_name, watering, sunlight, description, _id, default_image } = items[0];
+    const { medium_url } = default_image;
+    console.log(medium_url);
 
     try {
       const { data } = await addPlantToGarden({
         variables: {
           plant: {
+<<<<<<< HEAD
+          common_name: common_name,
+          scientific_name: scientific_name[0],
+          watering: watering,
+          sunlight: sunlight[0],
+          description: description,
+          _id: _id,
+          imgURL: medium_url
+        }},
+=======
             common_name: common_name,
             scientific_name: scientific_name[0],
             watering: watering,
@@ -63,6 +75,7 @@ const Search = () => {
             // _id: _id
           }
         },
+>>>>>>> 43628cfaac4a1a980b380bb1829af701eb513ac0
       });
 
       // Handle the response data if needed
