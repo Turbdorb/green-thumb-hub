@@ -1,17 +1,17 @@
 import { gql } from "@apollo/client";
 
 export const ADD_USER = gql`
-mutation Mutation($firstName: String!, $lastName: String!, $email: String!, $password: String!) {
-  addUser(firstName: $firstName, lastName: $lastName, email: $email, password: $password) {
-    token
-    user {
-      lastName
-      firstName
-      email
-      _id
+  mutation Mutation($firstName: String!, $lastName: String!, $email: String!, $password: String!) {
+    addUser(firstName: $firstName, lastName: $lastName, email: $email, password: $password) {
+      token
+      user {
+        lastName
+        firstName
+        email
+        _id
+      }
     }
   }
-}
 `;
 
 export const ADD_PLANT = gql`
@@ -74,28 +74,54 @@ export const DELETE_PLANT = gql`
 `;
 
 export const LOGIN = gql`
-mutation login($email: String!, $password: String!) {
-  login(email: $email, password: $password) {
-    token
-    user {
-      _id
-      firstName
-      lastName
-      email
+  mutation login($email: String!, $password: String!) {
+    login(email: $email, password: $password) {
+      token
+      user {
+        _id
+        firstName
+        lastName
+        email
+      }
     }
   }
-}
 `;
 
 export const WATER_PLANT = gql`
-mutation Mutation($plantId: ID!, $date: String!, $watered: Boolean!) {
-  waterPlant(plantId: $plantId, date: $date, watered: $watered) {
-    wateringHistory {
-      watered
-      date {
-        value
+  mutation Mutation($plantId: ID!, $date: String!, $watered: Boolean!) {
+    waterPlant(plantId: $plantId, date: $date, watered: $watered) {
+      wateringHistory {
+        watered
+        date {
+          value
+        }
+      }
+    }
+  }
+`;
+
+export const ADD_PLANT_TO_GARDEN = gql`
+mutation Mutation($plant: PlantInput!) {
+  addPlantToGarden(plant: $plant) {
+    _id
+    plants {
+      _id
+      common_name
+      cycle
+      description
+      growth_rate
+      hardiness
+      maintenance
+      scientific_name
+      sunlight
+      watering
+      wateringHistory {
+        date {
+          value
+        }
+        watered
       }
     }
   }
 }
-`
+`;

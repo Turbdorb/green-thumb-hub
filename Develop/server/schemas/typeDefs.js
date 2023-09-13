@@ -85,6 +85,17 @@ const typeDefs = gql`
       date: String!
       watered: Boolean!
     ): Plant
+
+    addPlantToGarden(plant: PlantInput!): User
+  }
+
+  input PlantInput {
+    _id: ID!
+    common_name: String
+    scientific_name: String!
+    watering: String!
+    sunlight: String!
+    description: String
   }
 `;
 

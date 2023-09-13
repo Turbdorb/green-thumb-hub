@@ -121,6 +121,22 @@ const resolvers = {
       } catch (error) {
         throw new Error(`Error adding water: ${error.message}`);
       }
+    },
+    addPlantToGarden: async (parent, {plant}, {userId}) => {
+      try {
+        const user = await User.findById(userId);
+
+        if (!user) {
+          throw new Error('User not found');
+        }
+
+        user.plants = user.plants.push(plant);
+        
+        await user.save();
+        return user;
+      } catch (error) {
+        throw new Error(`Error adding plant to garden: ${error.message}`);
+      }
     }
   }
 };

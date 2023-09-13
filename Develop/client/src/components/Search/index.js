@@ -87,12 +87,11 @@ class Search extends React.Component {
               <ol>Maintenance: {item.maintenance}</ol>
               <ol>Hardiness: {item.hardiness.min}</ol>
               <ol>Edible Fruit: {item.edible_fruit ? "Yes" : "No"}</ol>
-              <ol className=" indent-8">Description: {item.description}</ol>
-              {item.default_image.medium_url ? (
-                <img src={item.default_image.medium_url} alt="Plant" className="mx-auto"/>
-              ) : (
-                "Image not available"
-              )}
+              <ol>Description: {item.description}</ol>
+              {item.default_image?.medium_url 
+                ? (<img src={item.default_image.medium_url} alt="Plant" />) 
+                : ("Image not available")
+              }
             </div>
           ))}
       </div>
