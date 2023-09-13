@@ -1,41 +1,16 @@
 import { MyPlantsCard } from "./MyPlantsCard";
-import projImg1 from "../MyPlants/project-img1.png";
 import colorSharp2 from "../MyPlants/color-sharp2.png";
 import TrackVisibility from 'react-on-screen';
+import { useQuery } from "@apollo/client";
+import { QUERY_USER } from '../../utils/queries';
 
 export const MyPlants = () => {
-  const myplants = [
-    {
-      title: "Plant Name",
-      description: "Plant Description",
-      imgUrl: projImg1,
-    },
-    {
-      title: "Plant Name",
-      description: "Plant Description",
-      imgUrl: projImg1,
-    },
-    {
-      title: "Plant Name",
-      description: "Plant Description",
-      imgUrl: projImg1,
-    },
-    {
-      title: "Plant Name",
-      description: "Plant Description",
-      imgUrl: projImg1,
-    },
-    {
-      title: "Plant Name",
-      description: "Plant Description",
-      imgUrl: projImg1,
-    },
-    {
-      title: "Plant Name ",
-      description: "Plant Description",
-      imgUrl: projImg1,
-    },
-  ];
+  let plants;
+  const { data } = useQuery(QUERY_USER);
+
+  if (data) {
+    plants = data.user.plants;
+  }
 
   return (
     <section className="plant" id="plant">
@@ -60,11 +35,11 @@ export const MyPlants = () => {
                     
                       <div className="grid grid-rows-2 grid-flow-col gap-4">
                         {
-                          myplants.map((myplants, index) => {
+                          plants?.map((plants, index) => {
                             return (
                               <MyPlantsCard
                                 key={index}
-                                {...myplants}
+                                {...plants}
                                 />
                             )
                           })
