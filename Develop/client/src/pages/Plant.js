@@ -48,8 +48,8 @@ class Plant extends React.Component {
 
     return (
       <div className="bg-black h-screen">
+        <Nav />
         <div className="flex flex-col mt-24 justify-center items-center border text-center p-4 bg-red-200 container">
-          <Nav />
           <Search />
           <div>
             <h1> Fetch data from an api in react </h1>{" "}

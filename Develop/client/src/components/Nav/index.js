@@ -40,7 +40,7 @@ function Nav() {
 
     return (
 
-        <header class="fixed w-full z-20 top-0 left-0 bg-green-500 border-b border-zinc-50 shadow-sm">
+        <header class=" bg-green-500 border-b border-zinc-50 shadow-sm">
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
                 <Link to="/" class="flex items-center hover:no-underline">
                     <img src={gthlogo} class="w-14 mr-1" alt="Green Thumb Hub Logo" />

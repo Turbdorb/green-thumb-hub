@@ -1,21 +1,25 @@
 import React from "react";
-import Login from "../components/Login";
-// import Signup from "../components/Signup";
-import Nav from "../components/Nav";
 import logo from "../images/plant.jpg";
-import PlantCard from "../components/PlantCard";
-import Search from "../components/Search";
+import Header from "../components/Header";
+import Login from "../components/Login";
 
 const Home = () => {
   return (
-    <div className="flex flex-col relative">
-      <img src={logo} className="min-w-full" alt="plant" />
-      <Nav />
-
-      <Login />
-      <Search />
+    <div style={{ backgroundImage: `url(${logo})`, backgroundSize: 'cover', width: '100vw', height: '100vh' }}>
+      <div className="p-24 container">
+        <Header
+          heading="Welcome to GreenThumb Hub!"
+          heading2="Login to your account"
+          paragraph="Don't have an account yet?"
+          linkName="Signup"
+          linkUrl="/signup"
+        />
+        <Login />
+      </div>
     </div>
   );
 };
 
 export default Home;
+
+// className="flex justify-center items-center" style={{ backgroundImage: `url(${logo})`, backgroundSize: 'cover', width: '100vw', height: '100vh' }}

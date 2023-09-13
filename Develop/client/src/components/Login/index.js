@@ -33,11 +33,11 @@ function Login(props) {
     function showLogin() {
 
         if (Auth.loggedIn()) {
-            return <Navigate to="/" />
+            return <Navigate to="/mygarden" />
         } else {
             return (
-                <div className="flex flex-col justify-center overflow-hidden absolute m-32 lg:m-64 top-0 left-0 right-0 bottom-100">
-                    <div className='w-3/4 lg:w-3/4 lg:h-fit p-6 m-auto bg-zinc-50 rounded-md shadow-md'>
+                <div className="">
+                    <div className='bg-zinc-100 px-24 py-8 xl:py-16 rounded-tr-3xl rounded-bl-3xl rounded-tl-sm rounded-br-sm bg-opacity-80 border-2 border-green-500 shadow-xl shadow-black'>
                         <h2 className='text-3xl font-semibold text-center text-zinc-800'>Login</h2>
                         <form onSubmit={handleFormSubmit} className='mt-6'>
                             <div className="mb-2">
@@ -68,9 +68,8 @@ function Login(props) {
                                 </div>
                             ) : null}
                             <div className="mt-6">
-                                <button type="submit" className='w-full px-4 py-2 tracking-wide text-zinc-50 transition-colors duration-200 transform bg-green-700 rounded-md hover:bg-green-600 focus:outline-none focus:bg-green-600'>Submit</button>
+                                <button type="submit" className='w-full px-4 py-2 tracking-wide text-zinc-50 transition-colors duration-200 transform bg-green-600 rounded-md hover:bg-green-600 focus:outline-none focus:bg-green-600 shadow-sm shadow-black'>Submit</button>
                             </div>
-                            <p className='mt-2'>Don't have an account?<Link to="/signup" className='ml-1 underline text-zinc-800 hover:text-green-700'>Signup</Link></p>
                         </form>
                     </div>
                 </div>
