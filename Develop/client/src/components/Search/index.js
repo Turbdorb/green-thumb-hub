@@ -53,7 +53,6 @@ const Search = () => {
       const { data } = await addPlantToGarden({
         variables: {
           plant: {
-<<<<<<< HEAD
           common_name: common_name,
           scientific_name: scientific_name[0],
           watering: watering,
@@ -62,20 +61,6 @@ const Search = () => {
           _id: _id,
           imgURL: medium_url
         }},
-=======
-            common_name: common_name,
-            scientific_name: scientific_name[0],
-            watering: watering,
-            sunlight: sunlight[0],
-            // cycle: cycle,
-            description: description,
-            // growth_rate: growth_rate,
-            // hardiness: hardiness,
-            // maintenance: maintenance,
-            // _id: _id
-          }
-        },
->>>>>>> 43628cfaac4a1a980b380bb1829af701eb513ac0
       });
 
       // Handle the response data if needed
