@@ -54,16 +54,10 @@ function Nav() {
                 <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
                     <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0">
                         <li>
-                            <Link to="/" class="block relative top-2 py-2 pl-3 pr-4 text-zinc-50 rounded hover:no-underline hover:bg-green-700 hover:text-zinc-50 md:hover:bg-transparent md:p-0" aria-current="page">Home</Link>
+                            <Link to="/" class="block relative top-2 py-2 pl-3 pr-4 text-zinc-50 rounded hover:no-underline hover:bg-green-700 hover:text-zinc-50 md:hover:bg-transparent md:p-0" aria-current="page">My Garden</Link>
                         </li>
                         <li>
-                            <Link to="/plant" class="block relative top-2 py-2 pl-3 pr-4 text-zinc-50 rounded hover:no-underline hover:bg-green-700 hover:text-zinc-50 md:hover:bg-transparent md:p-0">Plants</Link>
-                        </li>
-                        <li>
-                            <Link to="/search" class="block relative top-2 py-2 pl-3 pr-4 text-zinc-50 hover:bg-green-700 hover:text-zinc-50 md:hover:bg-transparent hover:no-underline rounded md:p-0">Search</Link>
-                        </li>
-                        <li>
-                            <a href="#" class="block relative top-2 py-2 pl-3 pr-4 text-zinc-50 hover:no-underline hover:bg-green-700 hover:text-zinc-50 md:hover:bg-transparent rounded md:p-0">Contact</a>
+                            <Link to="/plant" class="block relative top-2 py-2 pl-3 pr-4 text-zinc-50 rounded hover:no-underline hover:bg-green-700 hover:text-zinc-50 md:hover:bg-transparent md:p-0">Plant Search</Link>
                         </li>
                     </ul>
                 </div>

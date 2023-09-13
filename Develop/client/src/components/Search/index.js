@@ -51,17 +51,18 @@ const Search = () => {
       const { data } = await addPlantToGarden({
         variables: {
           plant: {
-          common_name: common_name,
-          scientific_name: scientific_name[0],
-          watering: watering,
-          sunlight: sunlight[0],
-          // cycle: cycle,
-          description: description,
-          // growth_rate: growth_rate,
-          // hardiness: hardiness,
-          // maintenance: maintenance,
-          // _id: _id
-        }},
+            common_name: common_name,
+            scientific_name: scientific_name[0],
+            watering: watering,
+            sunlight: sunlight[0],
+            // cycle: cycle,
+            description: description,
+            // growth_rate: growth_rate,
+            // hardiness: hardiness,
+            // maintenance: maintenance,
+            // _id: _id
+          }
+        },
       });
 
       // Handle the response data if needed
@@ -71,12 +72,12 @@ const Search = () => {
     }
   };
 
-const jsxcss = "bg-transparent rounded-tl-none rounded-tr-3xl rounded-bl-3xl rounded-br-sm border-t-0 border-b-0 border-2 border-green-500 shadow-xl shadow-black p-4 hover:bg-zinc-100";
+  const jsxcss = "bg-transparent rounded-tl-none rounded-tr-3xl rounded-bl-3xl rounded-br-sm border-t-0 border-b-0 border-2 border-green-500 shadow-xl shadow-black p-4 hover:bg-zinc-100";
 
   return (
     <div className="font-body flex flex-row justify-center items-center w-full  shadow-black">
       <input
-        className="rounded-md p-2 m-2 border border-green-700 ring-1 ring-green-500 focus:ring-1 focus:ring-green-500"
+        className="rounded-md p-2 m-2 text-black bg-white border focus:border-green-400 focus:ring-green-600 focus:outline-none focus:ring focus:ring-opacity-40"
         type="text"
         value={inputID}
         onChange={handleInputChange}
@@ -91,12 +92,12 @@ const jsxcss = "bg-transparent rounded-tl-none rounded-tr-3xl rounded-bl-3xl rou
 
       {dataIsLoaded &&
         items.map((item, index) => (
-          <div key={index} className="m-4 p-4 bg-zinc-50/75 text-center">
+          <div key={index} className="m-4 p-4 bg-zinc-50/75 text-center rounded-tl-sm rounded-tr-3xl rounded-bl-3xl rounded-br-sm border-2 border-green-600 2xl:mx-64">
             <ol className={jsxcss}>{item.common_name}</ol>
-            {item.default_image?.medium_url 
+            {item.default_image?.medium_url
               ? (<img src={item.default_image.medium_url} alt="Plant" className="mx-auto my-4 rounded-t-full rounded-b-full shadow-black shadow-xl h-96 w-96" />
-            ) 
-            : ("Image not available")
+              )
+              : ("Image not available")
             }
             <ol className={jsxcss}>Scientific Name: {item.scientific_name}</ol>
             <ol className={jsxcss}>Watering: {item.watering}</ol>
@@ -107,12 +108,12 @@ const jsxcss = "bg-transparent rounded-tl-none rounded-tr-3xl rounded-bl-3xl rou
             <ol className={jsxcss}>Hardiness: {item.hardiness.min}</ol>
             <ol className={jsxcss}>Edible Fruit: {item.edible_fruit ? "Yes" : "No"}</ol>
             <ol className={jsxcss}>Description: {item.description}</ol>
-      <button
-        className="bg-blue-600 rounded-md p-2 m-2 shadow-sm shadow-black text-zinc-50"
-        onClick={addPlant}
-      >
-        Add Plant
-      </button>
+            <button
+              className="bg-blue-600 rounded-md p-2 m-2 shadow-sm shadow-black text-zinc-50"
+              onClick={addPlant}
+            >
+              Add Plant
+            </button>
           </div>
         ))}
 

@@ -3,7 +3,6 @@ import Plant from "./pages/Plant";
 import Home from "./pages/Home";
 import Signup from "./pages/CreateAccount";
 import MyGarden from "./pages/MyGarden";
-import Search from "./components/Search/index";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Uncomment import statement below after building queries and mutations
@@ -43,7 +42,6 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/MyGarden" element={<MyGarden />} />
-          <Route path="/search" element={<Search />} />
           <Route path="/plant" element={<Plant />} />
         </Routes>
       </Router>
