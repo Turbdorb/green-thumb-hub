@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -39,37 +39,39 @@
 
 
 /************ Banner Css ************/
-.banner {
-  margin-top: 0;
+  .banner { 
+  margin-top: 0; 
   padding: 260px 0 100px 0;
   background-image: url('./images/banner-bg.png');
-  background-position: top center;
+  background-position: top center; 
   background-size: cover;
   background-repeat: no-repeat;
 }
 .banner h1 {
   font-size: 65px;
+  color: #fff;
   font-weight: 700;
   letter-spacing: 0.8px;
   line-height: 1;
   margin-bottom: 20px;
-  display: block;
-  background-color: rgb(13, 78, 13);
-  margin-left: auto;
-  margin-right: auto;
+  display: flex;
+  background-color: #61A146;
+  margin: auto;
   width: 50%;
 }
-.banner button {
+  .banner button {
   color: #fff;
   font-weight: 700;
   font-size: 20px;
-  margin-top: 60px;
+  margin: auto;
   letter-spacing: 0.8px;
-  display: flex, block;
+  display: flex;
   align-items: center;
   background-color: black;
+  text-align: center;
+  padding: 4px;
 }
-.banner button svg {
+  .banner button svg {
   font-size: 25px;
   margin-left: 10px;
   transition: 0.3s ease-in-out;
@@ -78,9 +80,9 @@
 .banner button:hover svg {
   margin-left: 25px;
 }
-/* .banner img {
+  .banner img {
   animation: updown 3s linear infinite;
-} */
+} 
 @keyframes updown {
     0% {
         transform: translateY(-20px);
@@ -92,11 +94,11 @@
         transform: translateY(-20px);
     }
 }
-.txt-rotate > .wrap {
+/*.txt-rotate > .wrap {
   border-right: 0.08em solid #666;
 }
 /************ Reminder Css ************/
-.reminder {
+/*.reminder {
   padding: 0 0 50px 0;
   position: relative;
   background-image: url('./images/color-sharp2.png');
@@ -137,7 +139,7 @@
 } 
 
 /************ Plants Css ************/
-.plant {
+/*.plant {
   padding: 80px 0;
   position: relative;
   background-color: black;
@@ -175,7 +177,7 @@
     content: "";
     position: absolute;
     /* width: 100%; */
-    height: 100%;
+    /*height: 100%;
     background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
     top: 0;
     left: 0;
@@ -244,7 +246,7 @@
   font-size: 15px;
   letter-spacing: 0.8px;
 } */
-.background-image-right {
+/*.background-image-right {
   top: 20%;
   position: absolute;
   bottom: 0;
