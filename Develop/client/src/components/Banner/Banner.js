@@ -46,16 +46,15 @@ export const Banner = () => {
   }
 
   return (
-    <section className="banner" id="home">
+    <section className="banner font-body" id="home">
       <div>
-        <div className="align-items-center">
-          <div xs={12} md={6} xl={7}>
+        <div className="">
+          <div>
             <TrackVisibility>
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                <h1>{`WELCOME TO THE GARDEN`}</h1>
+                <h1 className="text-center">{`WELCOME TO THE GARDEN`}</h1>
                   <p> PLANT TEXT HERE IG IDK</p>
-                  <button onClick={() => console.log('connect')}>Check on my plants</button>
               </div>}
             </TrackVisibility>
           </div>

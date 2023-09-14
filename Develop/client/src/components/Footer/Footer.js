@@ -28,21 +28,22 @@
 //   )
 // }
 
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import navIcon1 from "./nav-icon1.svg";
 import navIcon2 from "./nav-icon2.svg";
 import navIcon3 from "./nav-icon3.svg";
 
 export const Footer = () => {
   return (
-    <footer className="bg-black">
+    <footer className="bg-black font-body border-t p-3">
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap items-center">
           <div className="w-full sm:w-1/2">
-            <img src={logo} alt="Logo" />
+            {/* <img src={logo} alt="Logo" /> */}
+            <h4 className="text-zinc-50 mt-4 -ml-12">GreenThumb Hub</h4>
           </div>
           <div className="w-full sm:w-1/2 text-center sm:text-right mt-4 sm:mt-0">
-            <div className="flex justify-center sm:justify-end space-x-4 mt-5">
+            <div className="flex justify-center sm:justify-end space-x-4 mt-0">
               <a href="#">
                 <img src={navIcon1} alt="Icon" className="w-12 h-12" />
               </a>
