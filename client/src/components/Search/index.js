@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { ADD_PLANT_TO_GARDEN } from "../../utils/mutations";
+import { Toast } from 'flowbite-react';
+import { HiCheck, HiX, HiExclamation } from 'react-icons/hi';
 
 const Search = () => {
   const [items, setItems] = useState([]);
@@ -106,9 +108,21 @@ const Search = () => {
             <ol className={jsxcss}>Hardiness: {item.hardiness.min}</ol>
             <ol className={jsxcss}>Edible Fruit: {item.edible_fruit ? "Yes" : "No"}</ol>
             <ol className={jsxcss}>Description: {item.description}</ol>
+            <div className="flex flex-col gap-4">
+      <Toast>
+        <div className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-green-100 text-green-500 dark:bg-green-800 dark:text-green-200">
+          <HiCheck className="h-5 w-5" />
+        </div>
+        <div className="ml-3 text-sm font-normal">
+          Plant has been added.
+        </div>
+        <Toast.Toggle />
+      </Toast>
+  </div>
             <button
               className="bg-blue-600 rounded-md p-2 m-2 shadow-sm shadow-black text-zinc-50"
               onClick={addPlant}
+              
             >
               Add Plant
             </button>
