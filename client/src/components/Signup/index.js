@@ -31,10 +31,10 @@ function Signup(props) {
 
     return (
         <div className="">
-            <div className="bg-zinc-100 px-24 py-8 xl:py-16 rounded-tr-3xl rounded-bl-3xl rounded-tl-sm rounded-br-sm bg-opacity-80 border-2 border-green-500 shadow-xl shadow-black">
+            <div className="mx-10 -mt-[4.25rem] px-2.5 pt-2 pb-10 md:px-8 md:mx-12 md:my-12 lg:px-8 lg:mx-12 lg:my-12 xl:py-16 xl:px-[40rem] xl:mx-auto flex flex-wrap">
             <form onSubmit={handleFormSubmit} className='font-body mx-auto '>
                 <div className="mb-2">
-                    <label htmlFor="firstName" className='block text-sm font-semibold text-zinc-800'>First Name:</label>
+                    <label htmlFor="firstName" className='block text-sm font-semibold text-zinc-50'>First Name:</label>
                     <input
                         placeholder="First Name"
                         name="firstName"
@@ -45,7 +45,7 @@ function Signup(props) {
                     />
                 </div>
                 <div className="mb-2">
-                    <label htmlFor="lastName" className='block text-sm font-semibold text-zinc-800'>Last Name:</label>
+                    <label htmlFor="lastName" className='block text-sm font-semibold text-zinc-50'>Last Name:</label>
                     <input
                         placeholder="Last Name"
                         name="lastName"
@@ -56,7 +56,7 @@ function Signup(props) {
                     />
                 </div>
                 <div className="mb-2">
-                    <label htmlFor="email" className='block text-sm font-semibold text-zinc-800'>Email:</label>
+                    <label htmlFor="email" className='block text-sm font-semibold text-zinc-50'>Email:</label>
                     <input
                         placeholder="youremail@test.com"
                         name="email"
@@ -67,7 +67,7 @@ function Signup(props) {
                     />
                 </div>
                 <div className="flex-row space-between my-2">
-                    <label htmlFor="pwd" className='block text-sm font-semibold text-zinc-800'>Password:</label>
+                    <label htmlFor="pwd" className='block text-sm font-semibold text-zinc-50'>Password:</label>
                     <input
                         placeholder="******"
                         name="password"

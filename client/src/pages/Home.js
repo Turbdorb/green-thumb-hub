@@ -5,8 +5,8 @@ import Login from "../components/Login";
 
 const Home = () => {
   return (
-    <div className="h-screen" style={{ backgroundImage: `url(${logo})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center center' }}>
-      <div className="p-24 container">
+    <div style={{ backgroundImage: `url(${logo})`, height: '100vh', width: '100vw', backgroundPosition: 'center', backgroundSize: 'cover'}}>
+      <div className="p-14">
         <Header
           heading="Welcome to GreenThumb Hub!"
           heading2="Login to your account"

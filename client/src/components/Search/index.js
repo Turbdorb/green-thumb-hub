@@ -3,6 +3,7 @@ import { useMutation } from "@apollo/client";
 import { ADD_PLANT_TO_GARDEN } from "../../utils/mutations";
 import { Toast } from 'flowbite-react';
 import { HiCheck, HiX, HiExclamation } from 'react-icons/hi';
+import { Link } from 'react-router-dom';
 
 const Search = () => {
   const [items, setItems] = useState([]);
@@ -72,7 +73,7 @@ const Search = () => {
     }
   };
 
-  const jsxcss = "bg-transparent rounded-tl-none rounded-tr-3xl rounded-bl-3xl rounded-br-sm border-t-0 border-b-0 border-2 border-green-500 shadow-xl shadow-black p-4 hover:bg-zinc-100";
+  const jsxcss = "bg-transparent rounded-tl-none rounded-tr-3xl rounded-bl-3xl rounded-br-sm border-t-0 border-b-0 border-2 border-green-500 shadow-xl shadow-black p-4 hover:bg-zinc-100 bg-zinc-50 antialiased font-body";
 
   return (
     <div className="font-body flex flex-row justify-center items-center w-full  shadow-black">
@@ -92,10 +93,10 @@ const Search = () => {
 
       {dataIsLoaded &&
         items.map((item, index) => (
-          <div key={index} className="m-4 p-4 bg-zinc-50/75 text-center rounded-tl-sm rounded-tr-3xl rounded-bl-3xl rounded-br-sm border-2 border-green-600 2xl:mx-64">
+          <div key={index} className="m-4 p-4 2xl:mx-64">
             <ol className={jsxcss}>{item.common_name}</ol>
             {item.default_image?.medium_url
-              ? (<img src={item.default_image.medium_url} alt="Plant" className="mx-auto my-4 rounded-t-full rounded-b-full shadow-black shadow-xl h-96 w-96" />
+              ? (<img src={item.default_image.medium_url} alt="Plant" className="mx-auto my-4 rounded-2xl shadow-black shadow-xl h-96 w-96" />
               )
               : ("Image not available")
             }
@@ -120,11 +121,13 @@ const Search = () => {
       </Toast>
   </div>
             <button
-              className="bg-blue-600 rounded-md p-2 m-2 shadow-sm shadow-black text-zinc-50"
+              className="py-3 px-4 my-4 flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-green-500 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800 text-zinc-50 mx-auto"
               onClick={addPlant}
               
             >
+            <Link to="/mygarden">
               Add Plant
+            </Link>
             </button>
           </div>
         ))}

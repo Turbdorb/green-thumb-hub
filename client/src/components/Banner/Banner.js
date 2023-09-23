@@ -48,13 +48,12 @@ export const Banner = () => {
   return (
     <section className="banner font-body" id="home">
       <div>
-        <div className="">
+        <div className="flex flex-wrap justify-center items-center mx-auto bg-green-500 w-[100%] mb-[20px] md:mx-auto md:w-[80vw] ">
           <div>
             <TrackVisibility>
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                <h1 className="text-center">{`WELCOME TO THE GARDEN`}</h1>
-                  <p> PLANT TEXT HERE IG IDK</p>
+                <h1 className="text-center font-body antialiased tracking-wide font-bold text-zinc-50 text-[65px]">{`WELCOME TO THE GARDEN`}</h1>
               </div>}
             </TrackVisibility>
           </div>
