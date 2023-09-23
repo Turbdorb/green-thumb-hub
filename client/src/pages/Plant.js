@@ -18,7 +18,8 @@ function Plant() {
     <div className="bg-gray-900 min-h-screen" style={{ backgroundImage: `url(${logo})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', height: '100%'}}>
       <Nav />
       <Headers
-        heading2="GreenThumb Hub"
+        heading="Welcome to Greenthumb Hub!"
+        heading2="Search for a plant to add!"
       />
       <Search />
     </div>

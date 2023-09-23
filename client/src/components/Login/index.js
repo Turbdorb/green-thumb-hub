@@ -37,10 +37,10 @@ function Login(props) {
         } else {
             return (
                 <div className="">
-                    <div className='bg-zinc-100 px-24 py-8 xl:py-16 rounded-tr-3xl rounded-bl-3xl rounded-tl-sm rounded-br-sm bg-opacity-80 border-2 border-green-500 shadow-xl shadow-black'>
-                        <form onSubmit={handleFormSubmit} className='font-body mx-auto p-2'>
+                    <div className='mx-auto px-2.5 pt-2 pb-10 md:px-8 md:mx-12 md:my-24 xl:py-16 xl:px-[40rem] xl:mx-auto'>
+                        <form onSubmit={handleFormSubmit} className='font-body mx-auto'>
                             <div className="">
-                                <label htmlFor="email" className='block text-sm font-semibold text-zinc-800'>Email address:</label>
+                                <label htmlFor="email" className='block text-sm font-semibold text-zinc-50'>Email address:</label>
                                 <input
                                     className='block w-full px-4 py-2 mt-2 text-black bg-white border rounded-md focus:border-green-400 focus:ring-green-600 focus:outline-none focus:ring focus:ring-opacity-40'
                                     placeholder="youremail@test.com"
@@ -51,7 +51,7 @@ function Login(props) {
                                 />
                             </div>
                             <div className="mb-2">
-                                <label htmlFor="pwd" className='block text-sm font-semibold text-zinc-800'>Password:</label>
+                                <label htmlFor="pwd" className='block text-sm font-semibold text-zinc-50'>Password:</label>
                                 <input
                                     className='block w-full px-4 py-2 mt-2 text-black bg-white border rounded-md focus:border-green-400 focus:ring-green-600 focus:outline-none focus:ring focus:ring-opacity-40'
                                     placeholder="******"

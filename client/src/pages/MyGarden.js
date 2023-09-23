@@ -11,7 +11,7 @@ function MyGarden() {
     <div className="App">
       <Nav />
       <Banner />
-      <div className="h-screen" style={{ backgroundImage: `url(${colorSharp2}`}}>
+      <div className="" style={{ backgroundImage: `url(${colorSharp2}`, height: '100vh'}}>
       <MyPlants />
       </div>
       <Footer />

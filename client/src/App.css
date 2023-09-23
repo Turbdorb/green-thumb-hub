@@ -41,24 +41,14 @@
 /************ Banner Css ************/
   .banner { 
   margin-top: 0; 
-  padding: 260px 0 100px 0;
+  padding: 100px 0 100px 0;
   background-image: url('./images/banner-bg.png');
   background-position: top center; 
   background-size: cover;
   background-repeat: no-repeat;
+  width: '100%';
 }
-.banner h1 {
-  font-size: 65px;
-  color: #fff;
-  font-weight: 700;
-  letter-spacing: 0.8px;
-  line-height: 1;
-  margin-bottom: 20px;
-  display: flex;
-  background-color: #61A146;
-  margin: auto;
-  width: 50%;
-}
+
   .banner button {
   color: #fff;
   font-weight: 700;
@@ -70,15 +60,6 @@
   background-color: black;
   text-align: center;
   padding: 4px;
-}
-  .banner button svg {
-  font-size: 25px;
-  margin-left: 10px;
-  transition: 0.3s ease-in-out;
-  line-height: 1;
-}
-.banner button:hover svg {
-  margin-left: 25px;
 }
   .banner img {
   animation: updown 3s linear infinite;

@@ -13,14 +13,14 @@ export const MyPlants = () => {
 
   return (
     <section className="plant font-body" id="plant">
-      <div className="xl:flex-3 ">
+      <div className="xl:flex-3">
         <TrackVisibility>
           {({ isVisible }) =>
-            <div class="text-center bg-zinc-200 rounded-sm border-2 border-green-500 shadow-lg shadow-black m-2.5 font-body p-2.5" className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-              <h2 className="text-center text-zinc-50 bg-black w-full">My Garden</h2>
+            <div class="text-center m-2.5 font-body p-2.5" className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+              <h2 className="text-center antialiased font-body text-zinc-50 bg-black w-full">My Garden</h2>
               <div id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
                 <div className="flex items-center justify-center h-auto text-center">
-                  <div className="grid grid-cols-3 grid-rows-3 gap-4">
+                  <div className="grid grid-cols-3 grid-rows-3 gap-6">
                     {plants?.map((plants, index) => {
                         console.log(plants);
                         return (

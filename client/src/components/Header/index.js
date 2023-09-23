@@ -9,14 +9,14 @@ export default function Header({
     linkUrl="#"
 }){
     return(
-        <div className='mb-10'>
-            <div className='flex justify-center'>
+        <div className='my-2 flex items-center justify-center mx-auto flex-wrap md:flex-nowrap md:block xl:flex-nowrap xl:block'>
+            <div className='flex items-center justify-center -mt-6'>
                 <img
                     alt=""
                     className=' w-24'
                     src={Logo}/>
             </div>
-            <h1 className='font-head mt-6 text-center text-6xl font-extrabold text-zinc-50'>
+            <h1 className='font-head mt-6 text-center text-4xl xl:text-6xl font-extrabold text-zinc-50'>
                 {heading}
             </h1>
             <h2 className='font-body mt-6 text-center text-2xl font-extrabold text-zinc-50'>
